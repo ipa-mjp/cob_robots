@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
-       name="raw3-1" >
+       name="p_rob" >
 
   <!-- common stuff -->
   <xacro:include filename="$(find cob_description)/urdf/common.xacro" />
