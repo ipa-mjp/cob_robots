@@ -1,0 +1,11 @@
+joint_names: ['arm_joint1', 'arm_joint2', 'arm_joint3','arm_joint4', 'arm_joint5', 'arm_joint6']
+#action_name: /arm_controller/follow_joint_trajectory
+action_name: /arm/joint_trajectory_controller/follow_joint_trajectory
+#service_ns: /arm_controller
+service_ns: /arm
+default_vel: 0.6
+
+# back side positions
+home: [[-0.7854, -1.5707, 1.5707, 0.0, 1.5707, 1.5707]]
+upright: [[0.0, -1.5707, 0.0, -1.5707, 0.00, 0.0]]
+
