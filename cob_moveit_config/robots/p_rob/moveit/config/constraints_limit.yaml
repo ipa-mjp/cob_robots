@@ -4,30 +4,30 @@
 ##################################
 
 joint_constraint_limits:
-#  arm_elbow_joint: 
+#  arm_joint1: 
 #    ceneter_position: 0 
 #    tolerance_above: 0
 #    tolerance_below:  0
-#  arm_shoulder_lift_joint:
-#    ceneter_position: 0
-#    tolerance_above: 0
-#    tolerance_below: 0
-#  arm_shoulder_pan_joint:
+  arm_joint2:
+    ceneter_position: 0.0
+    tolerance_above: 1.26
+    tolerance_below: 1.26
+#  arm_joint3:
 #    ceneter_position: -0.675
 #    tolerance_above: 1.0
 #    tolerance_below: 1.05
-  arm_wrist_1_joint:
-    ceneter_position: -3.14
-    tolerance_above: 1.57
-    tolerance_below: 3.14
-  arm_wrist_2_joint:
-    ceneter_position: -1.5
-    tolerance_above: 0.95
-    tolerance_below: 1.15
-#  arm_wrist_3_joint:
-#    ceneter_position: 0
-#    tolerance_above: 0
-#    tolerance_below: 0
+#  arm_joint4:
+#    ceneter_position: -3.14
+#    tolerance_above: 1.57
+#    tolerance_below: 3.14
+  arm_joint5:
+    ceneter_position: 0.0
+    tolerance_above: 1.10
+    tolerance_below: 1.57
+  arm_joint6:
+    ceneter_position: 0.0
+    tolerance_above: 1.26
+    tolerance_below: 1.26
   
 ##################################
 #position constraint --> check what required
