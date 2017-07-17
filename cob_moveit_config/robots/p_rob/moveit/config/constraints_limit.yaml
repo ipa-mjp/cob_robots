@@ -4,30 +4,30 @@
 ##################################
 
 joint_constraint_limits:
-#  arm_joint1: 
-#    ceneter_position: 0 
-#    tolerance_above: 0
-#    tolerance_below:  0
-  arm_joint2:
-    ceneter_position: 0.0
-    tolerance_above: 1.26
-    tolerance_below: 1.26
+  arm_joint1:
+    ceneter_position: -0.76
+    tolerance_above: 0.59
+    tolerance_below: 0.31
+#  arm_joint2:
+#    ceneter_position: 0.0
+#    tolerance_above: 0.88
+#    tolerance_below: 1.15
 #  arm_joint3:
-#    ceneter_position: -0.675
-#    tolerance_above: 1.0
-#    tolerance_below: 1.05
-#  arm_joint4:
-#    ceneter_position: -3.14
-#    tolerance_above: 1.57
-#    tolerance_below: 3.14
+#    ceneter_position: 1.5
+#    tolerance_above: 1.26
+#    tolerance_below: 1.5
+  arm_joint4:
+    ceneter_position: -3.14
+    tolerance_above: 0.7505
+    tolerance_below: 0.7369
   arm_joint5:
-    ceneter_position: 0.0
-    tolerance_above: 1.10
-    tolerance_below: 1.57
-  arm_joint6:
-    ceneter_position: 0.0
-    tolerance_above: 1.26
-    tolerance_below: 1.26
+    ceneter_position: -0.25
+    tolerance_above: 0.21
+    tolerance_below: 0.30
+#  arm_joint6:
+#    ceneter_position: 0.0
+#    tolerance_above: 3.14
+#    tolerance_below: 3.14
   
 ##################################
 #position constraint --> check what required
