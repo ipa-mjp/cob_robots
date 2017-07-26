@@ -19,14 +19,14 @@ write_to_file: false
 use_openmp: false
 
 noise_coefficients:
- - group_name: right_arm
-   stddev: [0.3, 1.0, 1.0, 0.8, 0.3, 0.3, 0.3]
-   min_stddev: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
-   decay:  [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
- - group_name: left_arm
-   stddev: [0.3, 1.0, 1.0, 0.8, 0.3, 0.3, 0.3]
-   min_stddev: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
-   decay:  [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
+ - group_name: arm_right
+   stddev: [0.3, 1.0, 1.0, 0.8, 0.3, 0.3, 0.3, 0.3, 0.3]
+   min_stddev: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+   decay:  [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
+ - group_name: arm_left
+   stddev: [0.3, 1.0, 1.0, 0.8, 0.3, 0.3, 0.3, 0.3, 0.3]
+   min_stddev: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+   decay:  [0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8, 0.8]
 
 features: 
 - class: stomp_moveit_interface/ObstacleAvoidanceFeature

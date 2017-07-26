@@ -1,5 +1,5 @@
-stomp/right_arm:
-  group_name: right_arm
+stomp/arm_right:
+  group_name: arm_right
   optimization:
     num_timesteps: 20
     num_iterations: 50
@@ -11,7 +11,7 @@ stomp/right_arm:
   task:
     noise_generator:
       - class: stomp_moveit/NormalDistributionSampling
-        stddev: [0.3, 1.0, 0.5, 0.4, 0.3, 0.3]
+        stddev: [0.3, 1.0, 0.5, 0.4, 0.3, 0.3, 0.3, 0.3, 0.3]
     cost_functions:
       - class: stomp_moveit/ObstacleDistanceGradient
         max_distance: 0.2
@@ -36,8 +36,8 @@ stomp/right_arm:
         marker_topic: stomp_trajectory
         marker_namespace: optimized
 #------------------------------------------------------------------------------------------------------------------------------------------
-stomp/left_arm:
-  group_name: left_arm
+stomp/arm_left:
+  group_name: arm_left
   optimization:
     num_timesteps: 20
     num_iterations: 50
@@ -49,7 +49,7 @@ stomp/left_arm:
   task:
     noise_generator:
       - class: stomp_moveit/NormalDistributionSampling
-        stddev: [0.3, 1.0, 0.5, 0.4, 0.3, 0.3]
+        stddev: [0.3, 1.0, 0.5, 0.4, 0.3, 0.3, 0.3, 0.3, 0.3]
     cost_functions:
       - class: stomp_moveit/ObstacleDistanceGradient
         max_distance: 0.2
