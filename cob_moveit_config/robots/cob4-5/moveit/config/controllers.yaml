@@ -10,6 +10,10 @@ controller_list:
       - arm_left_5_joint
       - arm_left_6_joint
       - arm_left_7_joint
+  - name: gripper_left/joint_trajectory_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
       - gripper_left_finger_1_joint
       - gripper_left_finger_2_joint
   - name: arm_right/joint_trajectory_controller
