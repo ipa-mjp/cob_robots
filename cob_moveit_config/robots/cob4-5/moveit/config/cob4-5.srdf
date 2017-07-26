@@ -17,9 +17,7 @@
         <joint name="arm_left_5_joint" />
         <joint name="arm_left_6_joint" />
         <joint name="arm_left_7_joint" />
-        <joint name="gripper_left_finger_1_joint" />
-        <joint name="gripper_left_finger_2_joint" />
-        <chain base_link="arm_left_base_link" tip_link="gripper_left_finger_2_link" />
+        <chain base_link="arm_left_base_link" tip_link="arm_left_7_link" />
     </group>
     <!--PASSIVE JOINT: Purpose: this element is used to mark joints that are not actuated-->
     <passive_joint name="b_caster_rotation_joint" />
