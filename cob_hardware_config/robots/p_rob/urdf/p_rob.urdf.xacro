@@ -51,7 +51,7 @@
   </xacro:raw_head>
 
   <xacro:p_rob name="arm" parent="base_link">
-    <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw}" />
+    <origin xyz="${arm_x} ${arm_y} ${arm_z}" rpy="${arm_roll} ${arm_pitch} ${arm_yaw+20}" />
   </xacro:p_rob>
 
 
