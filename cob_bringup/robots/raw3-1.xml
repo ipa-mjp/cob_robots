@@ -36,7 +36,7 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/drivers/sick_s300.launch">
+		<!--include file="$(find cob_bringup)/drivers/sick_s300.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="base_laser_front"/>
 			<arg name="sim" value="$(arg sim)"/>
@@ -45,7 +45,7 @@
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="base_laser_rear"/>
 			<arg name="sim" value="$(arg sim)"/>
-		</include>
+		</include-->
 		<include file="$(find cob_bringup)/components/raw3_base.launch" >
 			<arg name="robot" value="$(arg robot)" />
 			<arg name="can_device" value="can2" />
@@ -71,7 +71,7 @@
 		<include file="$(find cob_bringup)/drivers/scan_unifier.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
-		<include file="$(find cob_bringup)/tools/battery_monitor.launch">
+		<!--include file="$(find cob_bringup)/tools/battery_monitor.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
 		<include file="$(find cob_bringup)/tools/emergency_stop_monitor.launch">
@@ -79,7 +79,7 @@
 		</include>
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch">
 			<arg name="robot" value="$(arg robot)"/>
-		</include>
+		</include-->
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
