@@ -20,13 +20,14 @@
 	</include>
 
 	<group>
-		<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon pc1)" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg pc1)"/>
+				<arg name="enable_ntp_monitoring" value="false"/>
 			</include>
 			<!--include file="$(find cob_bringup)/tools/wifi_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
@@ -98,13 +99,14 @@
 	</group>
 
 	<group>
-		<machine name="pc2" address="$(arg pc2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+		<machine name="$(anon pc2)" address="$(arg pc2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
 		<group unless="$(arg sim)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg pc2)"/>
+				<arg name="ntp_server" value="$(arg pc1)"/>
 			</include>
 		</group>
 
@@ -114,6 +116,6 @@
 		</include>
 	</group>
 
-	<machine name="pc1" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+	<machine name="$(anon pc1)" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 </launch>
