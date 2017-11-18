@@ -22,7 +22,7 @@
         <arg name="component_name" value="$(arg component_name)"/>
         <arg name="can_device" value="can0"/>
         <arg name="sim" value="$(arg sim)"/>
-        <arg if="$(arg sim)" name="cartesian_control" value="true"/>
+        <arg if="$(arg sim)" name="cartesian_control" value="false"/>
     </include>
   
     <!--<node name="visualization" pkg="rviz" type="rviz" output="screen" />  -->
