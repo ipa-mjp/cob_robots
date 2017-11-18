@@ -4,7 +4,7 @@
     <!-- args -->
     <arg name="robot" value="lwa4p_extended"/>
     <arg name="component_name" value="arm"/>
-    <arg name="sim" default="true"/>
+    <arg name="sim" default="false"/>
     
     <!-- upload robot description -->
     <include file="$(find cob_hardware_config)/upload_robot.launch">
