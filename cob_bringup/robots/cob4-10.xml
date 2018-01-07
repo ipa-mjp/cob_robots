@@ -11,7 +11,7 @@
 	<arg name="cob4-10-h1" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
-	<arg name="use_predictive_control" default="true"/>
+	<arg name="use_predictive_control" default="false"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
