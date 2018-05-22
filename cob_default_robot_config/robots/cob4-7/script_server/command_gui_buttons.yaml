@@ -49,15 +49,43 @@ group16:
     [init,init],
     [recover,recover],
     [front,move,front],
-    [front_up,move,front_up],
-    [front_down,move,front_down],
+    [fd15,move,fd15],
+    [fd30,move,fd30],
+    #[front_up,move,front_up],
+    #[front_down,move,front_down],
     [back,move,back],
-    [back_up,move,back_up],
-    [back_down,move,back_down],
+    #[back_up,move,back_up],
+    #[back_down,move,back_down],
     [left,move,left],
     [right,move,right],
     [nod,move,nod],
     [shake,move,shake]]
+group17:
+  group_name: torso
+  component_name: torso
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [front,move,front],
+    [l15,move,l15],
+    [l30,move,l30],
+    [l45,move,l45],
+    [l60,move,l60],
+    [l75,move,l75],
+    [l90,move,l90]]
+group18:
+  group_name: torso
+  component_name: torso
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [front,move,front],
+    [r15,move,r15],
+    [r30,move,r30],
+    [r45,move,r45],
+    [r60,move,r60],
+    [r75,move,r75],
+    [r90,move,r90]]
 #group18:
 #  group_name: head
 #  component_name: head
@@ -76,12 +104,26 @@ group21:
   group_name: mimic
   component_name: behavior
   buttons: [[laughing,trigger,setMimicLaughing],
+    [happy,trigger,setMimicHappy],
     [asking,trigger,setMimicAsking],
-    [SayYes,trigger,setMimicYes],
-    [blinkingRight,trigger,setMimicBlinkingRight],
+    [sayYes,trigger,setMimicYes],
+    [sayNo,trigger,setMimicNo],
+    #[blinkingRight,trigger,setMimicBlinkingRight],
+    [blinkingLeft,trigger,setMimicBlinkingLeft],
+    [blinking,trigger,setMimicBlinking],
+    #[angry,trigger,setMimicAngry],
+    [tired,trigger,setMimicTired],
+    [fallAsleep,trigger,setMimicFallingAsleep],
+    [sleeping,trigger,setMimicSleeping],
+    [wakingUp,trigger,setMimicWakingUp],
+    #[afraid,trigger,setMimicAfraid],
+    [sad,trigger,setMimicSad],
+    [bored,trigger,setMimicBored],
+    [busy,trigger,setMimicBusy],
     [confused,trigger,setMimicConfused],
-    [angry,trigger,setMimicAngry],
-    [sleep,trigger,setMimicFallingAsleep]]
+    #[default,trigger,setMimicDefault],
+    [searching,trigger,setMimicSearching],
+    [surprised,trigger,setMimicSurprised]]
 group22:
   group_name: light
   component_name: behavior
@@ -90,7 +132,7 @@ group22:
     [red,trigger,setLightRed],
     [green,trigger,setLightGreen],
     [cyanSweep,trigger,setLightCyanSweep]]
-group23:
-  group_name: sound
-  component_name: behavior
-  buttons: [[hello,trigger,soundHello]]
+#group23:
+#  group_name: sound
+#  component_name: behavior
+#  buttons: [[hello,trigger,soundHello]]
