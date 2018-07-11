@@ -1,0 +1,31 @@
+## joint_names
+joint_names: ['cabin_rotation', 'slewing_revolute', 'boom_revolute','stick_revolute', 'bucket_revolute']
+
+## control_mode_adapter
+max_command_silence: 0.5
+
+## joint_state_controller
+joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+## joint trajectory controller
+joint_trajectory_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+     - cabin_rotation
+     - slewing_revolute
+     - boom_revolute
+     - stick_revolute
+     - bucket_revolute
+  constraints:
+      goal_time: 1.0
+      stopped_velocity_tolerance: 0.05
+      cabin_rotation: {trajectory: 0.1, goal: 0.1}
+      slewing_revolute: {trajectory: 0.1, goal: 0.1}
+      boom_revolute: {trajectory: 0.1, goal: 0.1}
+      stick_revolute: {trajectory: 0.1, goal: 0.1}
+      bucket_revolute: {trajectory: 0.1, goal: 0.1}
+  stop_trajectory_duration: 0.5
+  state_publish_rate:  25
+  action_monitor_rate: 10

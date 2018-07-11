@@ -1,0 +1,675 @@
+<?xml version="1.0" ?>
+<!-- Copyright (c) 2013-2017 Fraunhofer IOSB, Karlsruhe, Germany. All rights reserved. -->
+<robot name="WackerNeusonET18">
+
+<gazebo>
+   <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+     <robotNamespace>/e1_gripper</robotNamespace>
+     <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+   </plugin>
+
+<plugin name="gazebo_ros_controller_manager" filename="libgazebo_ros_controller_manager.so">
+<alwaysOn>true</alwaysOn>
+<updateRate>1000.0</updateRate>
+</plugin>
+
+</gazebo>
+
+
+
+<material name="material_velodyne">
+  <!--color rgba="0.5 0.5 0.55 1"/-->
+  <!--color rgba="0.2 0.9 0.2 1"/-->
+  <color rgba="1. 0. 0. 1"/>
+</material>
+<material name="material_cylinder">
+  <color rgba="0.3 0.3 0.3 1"/>
+</material>
+<material name="material_piston">
+  <color rgba="0.8 0.8 0.8 1"/>
+</material>
+<joint name="cabin_rotation" type="continuous">
+  <parent link="chassis"/>
+  <child link="cabin"/>
+  <origin rpy="0  0  0" xyz="0 0 0"/>
+  <axis xyz="0  0  1"/>
+  <limit effort="0" lower="0" upper="0" velocity="0.1"/>
+</joint>
+<joint name="slewing_revolute" type="revolute">
+  <parent link="cabin"/>
+  <child link="intermediate_cabin_boom"/>
+  <origin rpy="0  0  0" xyz="0.53    -0.035    0.57999"/>
+  <axis xyz="0  0  1"/>
+  <limit effort="0" lower="-0.78" upper="1.36" velocity="0.1"/>
+</joint>
+<joint name="boom_revolute" type="revolute">
+  <parent link="intermediate_cabin_boom"/>
+  <child link="boom"/>
+  <origin rpy="0  0  0" xyz="0.095  0     0.18"/>
+  <axis xyz="0  1  0"/>
+  <limit effort="0" lower="0.0" upper="1.5" velocity="0.1"/>
+</joint>
+<joint name="stick_revolute" type="revolute">
+  <parent link="boom"/>
+  <child link="stick"/>
+  <origin rpy="0  0  0" xyz="0.7    0     1.655"/>
+  <axis xyz="0  1  0"/>
+  <limit effort="0" lower="-0.08424484729766846" upper="1.9566327333450317" velocity="0.1"/>
+</joint>
+<joint name="bucket_revolute" type="revolute">
+  <parent link="stick"/>
+  <child link="quickcoupler"/>
+  <origin rpy="0 -2.7 0" xyz="0.996 0 0.615"/>
+  <axis xyz="0  1  0"/>
+  <limit effort="0" lower="-0.005246877670288086" upper="3.0338263511657715" velocity="0.1"/>
+</joint>
+<joint name="slewing_prismatic" type="prismatic">
+  <parent link="cylinder_slewing"/>
+  <child link="piston_slewing"/>
+  <origin rpy="0 0 0." xyz="0  0  0"/>
+  <axis xyz="0  0  1"/>
+  <limit effort="0.0" lower="0.4" upper="0.8" velocity="0.0"/>
+</joint>
+<joint name="boom_prismatic" type="prismatic">
+  <parent link="cylinder_boom"/>
+  <child link="piston_boom"/>
+  <origin rpy="0 0.0  0" xyz="0  0  0"/>
+  <axis xyz="0  0  1"/>
+  <limit effort="0.0" lower="0.78" upper="1.14" velocity="0.0"/>
+</joint>
+<joint name="stick_prismatic" type="prismatic">
+  <parent link="cylinder_stick"/>
+  <child link="piston_stick"/>
+  <origin rpy="0 0. 0" xyz="0  0  0"/>
+  <axis xyz="0  0  1"/>
+  <limit effort="0.0" lower="0.76" upper="1.22" velocity="0.0"/>
+</joint>
+<joint name="bucket_prismatic" type="prismatic">
+  <parent link="cylinder_bucket"/>
+  <child link="piston_bucket"/>
+  <origin rpy="0 0 0" xyz="0  0  0"/>
+  <axis xyz="0  0  1"/>
+  <limit effort="0.0" lower="0.64" upper="0.98" velocity="0.0"/>
+  <!--limit effort="0.0" lower="0.61" upper="1.02" velocity="0.0"/-->
+  <!-- cylinder only 49cm, mit Gelenkpunkt 56cm, gemessen 2.218rad 93.5cm umgerechnet 97.0cm -->
+  <!-- stick cylinder 68cm, boom 64cm mit Gelenkpunkt -->
+  <!-- gemessen min/max 63.5cm, 98.0cm, umgerechnet alt 60.4cm, 100.9cm -->
+</joint>
+<joint name="cylinder_slewing" type="revolute">
+  <parent link="cabin"/>
+  <child link="cylinder_slewing"/>
+  <origin rpy="-0.4 1.5707  0.1098" xyz="-0.05 -0.36 0.54"/>
+  <axis xyz="1  0  0"/>
+  <limit effort="0" lower="0" upper="0" velocity="0.1"/>
+</joint>
+<joint name="cylinder_boom" type="revolute">
+  <parent link="intermediate_cabin_boom"/>
+  <child link="cylinder_boom"/>
+  <origin rpy="0  -0.55  0" xyz="0.21  0   -0.02"/>
+  <axis xyz="0  1  0"/>
+  <limit effort="0" lower="0" upper="0" velocity="0.1"/>
+</joint>
+<joint name="cylinder_stick" type="revolute">
+  <parent link="boom"/>
+  <child link="cylinder_stick"/>
+  <origin rpy="0 1.0276 0" xyz="-0.13   0     1.135"/>
+  <axis xyz="0  -1  0"/>
+  <limit effort="0" lower="0" upper="0" velocity="0.1"/>
+</joint>
+<joint name="cylinder_bucket" type="revolute">
+  <parent link="stick"/>
+  <child link="cylinder_bucket"/>
+  <origin rpy="0  1.242  0" xyz="0.14   0     0.315"/>
+  <axis xyz="0  -1  0"/>
+  <limit effort="0" lower="0" upper="0" velocity="0.1"/>
+</joint>
+<joint name="bucket_lever" type="revolute">
+  <parent link="stick"/>
+  <child link="bucket_lever_1_link"/>
+  <origin rpy="0  -0.1  0" xyz="0.89    0       0.56499"/>
+  <axis xyz="0  1  0"/>
+  <limit effort="0" lower="0" upper="0" velocity="0.1"/>
+</joint>
+<joint name="bucket_lever_3" type="revolute">
+  <parent link="quickcoupler"/>
+  <child link="bucket_lever_2"/>
+  <origin rpy="0 0.45 0" xyz="0.143 0 0"/>
+  <axis xyz="0 1 0"/>
+  <limit effort="0" lower="0" upper="0" velocity="0.1"/>
+</joint>
+<link name="velodyne_boom" />
+<joint name="velodyne_boom_j" type="fixed">
+  <parent link="boom"/>
+  <child link="velodyne_boom"/>
+  <origin xyz="0.242018358 0.0 1.02156228" rpy="-1.570796326794897 -2.55 0"/>
+  <axis xyz="1  0  0"/>
+  <limit effort="0" lower="0" upper="0" velocity="0.1"/>
+</joint>
+<link name="chassis">
+  <inertial>
+    <mass value="1500"/>
+    <origin rpy="0  0  0" xyz="-0.534  0  0.686"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <collision name="collision_undercarriage">
+    <origin rpy="0  0  0" xyz="0     0     0.296"/>
+    <geometry>
+      <box size=".600 .840 .172"/>
+    </geometry>
+  </collision>
+  <visual name="visual_undercarriage">
+    <origin rpy="0  0  0" xyz="0     0     0.296"/>
+    <geometry>
+      <box size=".600 .840 .172"/>
+    </geometry>
+    <material name="material_cylinder"/>
+  </visual>
+  <collision name="collision_rotation_gear">
+    <origin xyz="0 0 0.432" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius=".20" length=".1"/>
+    </geometry>
+  </collision>
+  <visual name="visual_rotation_gear">
+    <origin xyz="0 0 0.432" rpy="0 0 0"/>
+    <geometry>
+      <cylinder radius=".20" length=".1"/>
+    </geometry>
+    <material name="material_cylinder"/>
+  </visual>
+  <collision name="collision_track_tire_right">
+    <origin xyz="-.110 -.535 .191" rpy="0 0 0"/>
+    <geometry>
+      <box size="1.605 .230 .382"/>
+    </geometry>
+  </collision>
+  <visual name="visual_track_tire_right">
+    <origin xyz="0.05 -.535 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/track_wheel.dae" scale="0.411 0.4 0.4"/>
+    </geometry>
+  </visual>
+  <collision name="collision_track_tire_left">
+    <origin xyz="-.110 .535 .191" rpy="0 0 0"/>
+    <geometry>
+      <box size="1.605 .230 .382"/>
+    </geometry>
+  </collision>
+  <visual name="visual_track_tire_left">
+    <origin xyz="0.05 .535 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/track_wheel.dae" scale="0.411 0.4 0.4"/>
+    </geometry>
+  </visual>
+  <collision name="collision_blade">
+    <origin xyz="0.8775 0 0.075" rpy="0 0 0"/>
+    <geometry>
+      <box size="0.37 1.3 0.91"/>
+    </geometry>
+  </collision>
+</link>
+<link name="cabin">
+  <inertial>
+    <mass value="0.100"/>
+    <origin rpy="0  0  0" xyz="0  0  0"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <collision name="collision_cabin">
+    <origin xyz="-.434 0 1.386" rpy="0 0 0"/>
+    <geometry>
+      <box size="1.470 .990 1.808"/>
+    </geometry>
+  </collision>
+  <visual name="visual_cabin">
+    <origin xyz="0 0 0.400" rpy="0 0 1.5707"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/cabin.dae" scale="0.45 0.45 0.45"/>
+    </geometry>
+    <material name="material_velodyne"/>
+  </visual>
+  <collision name="velodyne_left_c">
+    <origin xyz="0.4233 0.54 1.35333" rpy="0 0.385 0"/>
+    <geometry>
+      <cylinder length="0.0717" radius="0.05165"/>
+    </geometry>
+  </collision>
+  <collision name="velodyne_right_c">
+    <origin xyz="0.4341 -0.50 1.3101" rpy="0 0.395 0"/>
+    <geometry>
+      <cylinder length="0.0717" radius="0.05165"/>
+    </geometry>
+  </collision>
+  <visual name="visual_velodyne_left">
+    <origin xyz="0.4233 0.54 1.35333" rpy="0 0.385 0"/>
+    <geometry>
+      <cylinder length="0.0717" radius="0.05165"/>
+    </geometry>
+    <material name="material_velodyne"/>
+  </visual>
+  <visual name="visual_velodyne_right">
+    <origin xyz="0.4341 -0.50 1.3101" rpy="0 0.395 0"/>
+    <geometry>
+      <cylinder length="0.0717" radius="0.05165"/>
+    </geometry>
+    <material name="material_velodyne"/>
+  </visual>
+</link>
+<link name="intermediate_cabin_boom">
+  <inertial>
+    <mass value="0.10"/>
+    <origin rpy="0  0  0" xyz="0.09  0    0.02"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <collision name="collision">
+    <origin rpy="0  0  0" xyz="0.09  0    0.02"/>
+    <geometry>
+      <box size=".200 .150 .280"/>
+    </geometry>
+  </collision>
+  <visual name="visual">
+    <origin rpy="0  0  0" xyz="0     0    -0.002"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/intermediate.dae" scale="0.45 0.45 0.45"/>
+    </geometry>
+  </visual>
+</link>
+<link name="boom">
+  <inertial>
+    <mass value="0.30"/>
+    <origin rpy="0  0  0" xyz="0.14   0     0.935"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <collision name="collision_boom_2">
+    <origin rpy="0      0.8224  0" xyz="0.335  0     1.32"/>
+    <geometry>
+      <box size=".200 .150 .970"/>
+    </geometry>
+  </collision>
+  <collision name="collision_boom_1">
+    <origin rpy="0   -0.05  0" xyz="-0.035  0     0.54"/>
+    <geometry>
+      <box size=".200 .150 1.100"/>
+    </geometry>
+  </collision>
+  <collision name="velodyne_boom_c">
+    <origin xyz="0.242018358 0.0 1.02156228" rpy="-1.570796326794897 -2.55 0"/>
+    <geometry>
+      <cylinder length="0.0717" radius="0.05165"/>
+    </geometry>
+  </collision>
+  <visual name="visual_velodyne_boom">
+    <origin xyz="0.242018358 0.0 1.02156228" rpy="-1.570796326794897 -2.55 0"/>
+    <geometry>
+      <cylinder length="0.0717" radius="0.05165"/>
+    </geometry>
+    <material name="material_velodyne"/>
+  </visual>
+  <visual name="visual_boom">
+    <origin rpy="0      -0.02    -3.14158" xyz="0  0  0"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/boom.dae" scale="1.1 1.1 1.1"/>
+    </geometry>
+  </visual>
+</link>
+<link name="stick">
+  <inertial>
+    <mass value="0.30"/>
+    <origin rpy="0  0  0" xyz="0.495  0     0.31"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <collision name="stick">
+    <origin rpy="0     1.018  0" xyz="0.475  0     0.34"/>
+    <geometry>
+      <box size=".150 .150 1.171"/>
+    </geometry>
+  </collision>
+  <visual name="stick">
+    <origin rpy="0     0.055  0" xyz="0  0  0"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/stick.dae" scale="0.42 0.43 0.45"/>
+    </geometry>
+  </visual>
+</link>
+<link name="quickcoupler">
+  <inertial>
+    <mass value="0.25"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <visual name="visual_gripper_rotator">
+    <geometry>
+      <mesh filename="package://e1_description/meshes/quickcoupler_oq40.dae" scale="1 1 1"/>
+    </geometry>
+  </visual>
+  <collision name="collision_gripper_rotator">
+    <geometry>
+      <mesh filename="package://e1_description/meshes/quickcoupler_oq40.dae" scale="1 1 1"/>
+    </geometry>
+  </collision>
+</link>
+<link name="gripper_rotator">
+  <inertial>
+    <mass value="0.20"/>
+    <origin rpy="0 0 0" xyz="-0.0 0 0"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <visual name="visual_gripper_rotator">
+    <origin rpy="0 0 0" xyz="0 0.0 0.0"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/kinshofer_rotator.dae" scale="1 1 1"/>
+    </geometry>
+  </visual>
+  <collision name="collision_gripper_rotator">
+    <origin rpy="0 0 0" xyz="0 0.0 0.0"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/kinshofer_rotator.dae" scale="1 1 1"/>
+    </geometry>
+  </collision>
+</link>
+<joint name="quickcoupler_gripper_joint" type="fixed">
+  <parent link="quickcoupler"/>
+  <child link="gripper_rotator"/>
+  <origin xyz="0.044405 0.0 -0.126539 " rpy="0 -0.034609879 0"/>
+  <axis xyz="0 1 0"/>
+</joint>
+<joint name="gripper_rotator_joint" type="continuous">
+  <parent link="gripper_rotator"/>
+  <child link="gripper_body"/>
+  <axis xyz="0 0 1"/>
+  <origin xyz="0.2215 0 -0.23"/>
+</joint>
+<joint name="gripper_left_joint" type="revolute">
+  <parent link="gripper_body"/>
+  <child link="gripper_left"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="0.0" upper="1.3265" velocity="0.1" effort="0"/>
+  <origin xyz="0 0.08 -0.32815"/>
+</joint>
+<joint name="gripper_right_joint" type="revolute">
+  <parent link="gripper_body"/>
+  <child link="gripper_right"/>
+  <axis xyz="1 0 0"/>
+  <limit lower="0.0" upper="1.3265" velocity="0.1" effort="0"/>
+  <origin xyz="0 -0.08 -0.32815" rpy="0 0 3.14159265"/>
+</joint>
+<link name="gripper_body">
+  <inertial>
+    <mass value="0.055"/>
+    <origin rpy="0  0  0" xyz="0 0 0"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <visual name="visual_gripper_body">
+    <origin rpy="0 0 0" xyz="0     0.00  0.0"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/kinshofer_body.dae" scale="1 1 1"/>
+    </geometry>
+  </visual>
+  <collision name="collision_gripper_body">
+    <origin rpy="0 0 0" xyz="0     0.00  0.0"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/kinshofer_body.dae" scale="1 1 1"/>
+    </geometry>
+  </collision>
+</link>
+<link name="gripper_left">
+  <inertial>
+    <mass value="0.020"/>
+    <origin rpy="0  0  0" xyz="-0.081  0     0.27"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <visual name="visual_gripper_left">
+    <origin rpy="0 0 0" xyz="0 0.00 0.0"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/kinshofer_gripper.dae" scale="1 1 1"/>
+    </geometry>
+  </visual>
+  <collision name="collision_gripper_left">
+    <origin rpy="0 0 0" xyz="0 0.00 0.0"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/kinshofer_gripper.dae" scale="1 1 1"/>
+    </geometry>
+  </collision>
+</link>
+<link name="gripper_right">
+  <inertial>
+    <mass value="0.020"/>
+    <origin rpy="0  0  0" xyz="-0.0 0 0."/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <visual name="visual_gripper_right">
+    <origin rpy="0 0 0" xyz="0 0.0 0.0"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/kinshofer_gripper.dae" scale="1 1 1"/>
+    </geometry>
+  </visual>
+  <collision name="collision_gripper_right">
+    <origin rpy="0 0 0" xyz="0 0.0 0.0"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/kinshofer_gripper.dae" scale="1 1 1"/>
+    </geometry>
+  </collision>
+</link>
+<link name="cylinder_slewing">
+  <inertial>
+    <mass value="0.05"/>
+    <origin rpy="0  0  0" xyz="0.  0   0"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <visual name="visual_c_slewing">
+    <origin rpy="0 0 0" xyz="0. 0  0.06"/>
+    <geometry>
+      <cylinder length=".640" radius=".034"/>
+    </geometry>
+    <material name="material_cylinder"/>
+  </visual>
+</link>
+<link name="piston_slewing">
+  <inertial>
+    <mass value="0.05"/>
+    <origin rpy="0  0  0" xyz="-0. -0.0  0.22"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <visual name="visual_p_slewing">
+    <origin rpy="0 0 0" xyz="-0. -0.0  -0.24"/>
+    <geometry>
+      <cylinder length=".600" radius=".020"/>
+    </geometry>
+    <material name="material_piston"/>
+  </visual>
+</link>
+<link name="cylinder_boom">
+  <inertial>
+    <mass value="0.010"/>
+    <origin rpy="0  0  0" xyz="0.00    0       0.28999"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <collision name="collision_cylinder_boom">
+    <origin rpy="0     0.0  0" xyz="0.00    0       0.28999"/>
+    <geometry>
+      <cylinder length=".584" radius=".034"/>
+    </geometry>
+  </collision>
+  <visual name="visual_cylinder_boom">
+    <origin rpy="0     0.0  0" xyz="0.00    0       0.31799"/>
+    <geometry>
+      <cylinder length=".64" radius=".034"/>
+    </geometry>
+    <material name="material_cylinder"/>
+  </visual>
+</link>
+<link name="piston_boom">
+  <inertial>
+    <mass value="0.05"/>
+    <origin rpy="0  0  0" xyz="-0.00  0    0.8"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <collision name="collision_piston_boom">
+    <origin rpy="0     0.0  0" xyz="-0.00  0    -0.31"/>
+    <geometry>
+      <cylinder length=".600" radius=".020"/>
+    </geometry>
+  </collision>
+  <visual name="visual_piston_boom">
+    <origin rpy="0     0.0  0" xyz="-0.00  0    -0.31"/>
+    <geometry>
+      <cylinder length=".600" radius=".020"/>
+    </geometry>
+    <material name="material_piston"/>
+  </visual>
+</link>
+<link name="cylinder_stick">
+  <inertial>
+    <mass value="0.010"/>
+    <origin rpy="0  0  0" xyz="0.  0     0.201"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <collision name="collision_cylinder_ds">
+    <origin rpy="0      0  0" xyz="0.  0     0.261"/>
+    <geometry>
+      <cylinder length=".594" radius=".034"/>
+    </geometry>
+  </collision>
+  <visual name="visual_cylinder_ds">
+    <origin rpy="0      0  0" xyz="0.  0     0.304"/>
+    <geometry>
+      <cylinder length=".68" radius=".034"/>
+    </geometry>
+    <material name="material_cylinder"/>
+  </visual>
+</link>
+<link name="piston_stick">
+  <inertial>
+    <mass value="0.05"/>
+    <origin rpy="0  0  0" xyz="-0.  0    0.4"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <collision name="collision_piston_ds">
+    <origin rpy="0      0.  0" xyz="-0.  0    -0.34"/>
+    <geometry>
+      <cylinder length=".655" radius=".020"/>
+    </geometry>
+  </collision>
+  <visual name="visual_piston_ds">
+    <origin rpy="0      0.  0" xyz="-0.  0    -0.34"/>
+    <geometry>
+      <cylinder length=".655" radius=".020"/>
+    </geometry>
+    <material name="material_piston"/>
+  </visual>
+</link>
+<link name="cylinder_bucket">
+  <inertial>
+    <mass value="0.08"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <collision name="collision_cylinder_bucket">
+    <origin rpy="0      0  0" xyz="0  0     0.204"/>
+    <geometry>
+      <cylinder length=".456" radius=".034"/>
+    </geometry>
+  </collision>
+  <visual name="visual_cylinder_bucket">
+    <origin rpy="0      0 0" xyz="0  0     0.256"/>
+    <geometry>
+      <cylinder length=".56" radius=".034"/>
+    </geometry>
+    <material name="material_cylinder"/>
+  </visual>
+</link>
+<link name="piston_bucket">
+  <inertial>
+    <mass value="0.03"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <collision name="collision_piston_bucket">
+    <origin rpy="0      0 0" xyz="-0   0    -0.304"/>
+    <geometry>
+      <cylinder length=".602" radius=".020"/>
+    </geometry>
+  </collision>
+  <visual name="visual_piston_bucket">
+    <origin rpy="0      0  0" xyz="-0   0    -0.304"/>
+    <geometry>
+      <cylinder length=".602" radius=".020"/>
+    </geometry>
+    <material name="material_piston"/>
+  </visual>
+</link>
+<link name="bucket_lever_1_link">
+  <inertial>
+    <mass value="0.01"/>
+    <origin rpy="0  0  0" xyz="-0.2   0    0.05"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <visual name="visual_bucket lever">
+    <origin rpy="0  0  0" xyz="-0.2   0    0.05"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/lever.dae" scale="0.953 1 0.9"/>
+    </geometry>
+  </visual>
+</link>
+<link name="bucket_lever_2">
+  <inertial>
+    <mass value="1"/>
+    <origin rpy="0  0  0" xyz="-0.09  0   -0.03"/>
+    <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+  </inertial>
+  <visual name="visual_bucket_lever_2">
+    <origin rpy="-3.14158 -0.05     0" xyz="-0.181  0    -0.06"/>
+    <geometry>
+      <mesh filename="package://e1_description/meshes/lever.dae" scale="0.916 0.75 0.9"/>
+    </geometry>
+  </visual>
+</link>
+
+
+<transmission name="cabin_rotation_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="cabin_rotation">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="cabin_rotation_motor">
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="slewing_revolute_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="slewing_revolute">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="slewing_revolute_motor">
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="boom_revolute_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="boom_revolute">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="boom_revolute_motor">
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="stick_revolute_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="stick_revolute">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="stick_revolute_motor">
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="bucket_revolute_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="bucket_revolute">
+    <hardwareInterface>PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="bucket_revolute_motor">
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+</robot>

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:macro name="e1_gripper_transmission" params="prefix">
+
+    <transmission name="cabin_rotation_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="cabin_rotation">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="cabin_rotation_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+  
+    <transmission name="slewing_revolute_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="slewing_revolute">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="slewing_revolute_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+  
+    <transmission name="boom_revolute_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="boom_revolute">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="boom_revolute_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+  
+    <transmission name="stick_revolute_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="stick_revolute">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="stick_revolute_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+  
+    <transmission name="bucket_revolute_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="bucket_revolute">
+        <hardwareInterface>PositionJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="bucket_revolute_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+  </xacro:macro>
+
+</robot>
+
