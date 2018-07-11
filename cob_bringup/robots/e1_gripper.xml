@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- args -->
+        <arg name="robot" value="e1_gripper"/>
+	<arg name="pc1" default="localhost"/>
+	<arg name="pc2" default="localhost"/>
+	<arg name="ur_ip" default="localhost"/>
+        <arg name="env-script" default="$(find cob_bringup)/env_akit.sh"/>
+	<arg name="sim" default="false"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+      <!-- upload robot description -->
+      <include file="$(find cob_hardware_config)/upload_robot.launch">
+              <arg name="robot" value="$(arg robot)"/>
+      </include>
+      <!-- upload default configuration parameters -->
+      <!--include file="$(find cob_default_robot_config)/upload_param.launch">
+              <arg name="robot" value="$(arg robot)"/>
+      </include-->
+
+       <group>
+
+      <machine name="$(anon pc1)" address="$(arg pc1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
+
+      <!-- joint state publisher -->
+      <node ns="e1_gripper" name="joint_states_relay" pkg="topic_tools" type="relay" args="joint_states /joint_states" cwd="node" respawn="true" output="screen"/>
+
+      <!-- robot state publisher -->
+      <include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+          <arg name="robot" value="e1_gripper"/>
+          <!--arg name="joint_state_gui" value="$(arg joint_state_gui)"/-->
+      </include>
+
+      <!-- fake Calibration and HW-Services -->
+      <node pkg="rostopic" type="rostopic" name="fake_joint_calibration" args="pub /calibrated std_msgs/Bool true" />
+      <node ns="e1_gripper" pkg="cob_helper_tools" type="fake_driver.py" name="fake_driver" cwd="node" respawn="false" output="screen"/>
+
+  <include file="$(find cob_bringup)/controllers/generic_controller.launch">
+      <arg name="robot" value="$(arg robot)"/>
+      <arg name="component_name" value="e1_gripper"/>
+  </include>
+
+    </group>
+</launch>
