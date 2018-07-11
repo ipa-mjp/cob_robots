@@ -8,10 +8,10 @@
 	<arg name="ur_ip" default="localhost"/>
         <arg name="env-script" default="$(find cob_bringup)/env_akit.sh"/>
 	<arg name="sim" default="false"/>
-	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+        <arg name="pkg_hardware_config" default="$(find ipa_hardware_config)"/>
 
       <!-- upload robot description -->
-      <include file="$(find cob_hardware_config)/upload_robot.launch">
+      <include file="$(find ipa_hardware_config)/upload_robot.launch">
               <arg name="robot" value="$(arg robot)"/>
       </include>
       <!-- upload default configuration parameters -->
