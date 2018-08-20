@@ -125,8 +125,8 @@
 	<xacro:property name="def_sensorring_cam3d_front_yaw" value="0.0"/>
 
 	<!-- cam3d | handeye calibration | relative to sensorring_link -->
-	<xacro:property name="def_sensorring_cam3d_back_x" value="-0.121"/>
-	<xacro:property name="def_sensorring_cam3d_back_y" value="-0.095"/>
+	<xacro:property name="def_sensorring_cam3d_back_x" value="-0.111"/>
+	<xacro:property name="def_sensorring_cam3d_back_y" value="-0.155"/>
 	<xacro:property name="def_sensorring_cam3d_back_z" value="0.0293"/>
 	<xacro:property name="def_sensorring_cam3d_back_roll" value="0.0"/>
 	<xacro:property name="def_sensorring_cam3d_back_pitch" value="0.0"/>
