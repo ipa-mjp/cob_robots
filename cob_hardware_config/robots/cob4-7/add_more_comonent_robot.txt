@@ -1,0 +1,7 @@
+
+- cob_defualt_robot_config: ----- cob4-7/command_gui_buttons.yaml	
+			    ----- cob4-7/upload_param.xml
+
+- cob_hardware_config: ----- cob4-7.urdf.xacro
+
+- cob_bringup: ---- cob4-7.xml
