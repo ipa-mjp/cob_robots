@@ -32,17 +32,17 @@ group12:
     [wave_demo, move, wave_demo],
     [hello, move, hello],
     [call, move, call]]
-#group13:
-#  group_name: arm_right
-#  component_name: arm_right
-#  buttons: [[stop,stop],
-#    [init,init],
-#    [recover,recover],
-#    [home,move,home],
-#    [folded,move,folded],
-#    [side, move, side],
-#    [wave_demo, move, wave_demo],
-#    [hello, move, hello]]
+group13:
+  group_name: arm_right
+  component_name: arm_right
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [side, move, side],
+    [wave_demo, move, wave_demo],
+    [hello, move, hello]]
 group16:
   group_name: torso
   component_name: torso
