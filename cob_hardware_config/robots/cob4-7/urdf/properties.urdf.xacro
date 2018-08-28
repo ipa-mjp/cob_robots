@@ -118,4 +118,13 @@
 	<xacro:property name="head_cam_roll" value="${def_head_cam_roll+offset_head_cam_roll}"/>
 	<xacro:property name="head_cam_pitch" value="${def_head_cam_pitch+offset_head_cam_pitch}"/>
 	<xacro:property name="head_cam_yaw" value="${def_head_cam_yaw+offset_head_cam_yaw}"/>
+
+
+        <!-- cam | handeye calibration | relative to head_3_link -->
+        <xacro:property name="face_cam_x" value="${def_face_cam_x}"/>
+        <xacro:property name="face_cam_y" value="${def_face_cam_y}"/>
+        <xacro:property name="face_cam_z" value="${def_face_cam_z}"/>
+        <xacro:property name="face_cam_roll" value="${def_face_cam_roll}"/>
+        <xacro:property name="face_cam_pitch" value="${def_face_cam_pitch}"/>
+        <xacro:property name="face_cam_yaw" value="${def_face_cam_yaw}"/>
 </robot>

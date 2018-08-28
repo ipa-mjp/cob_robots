@@ -71,6 +71,9 @@
   <xacro:usb_cam name="head_cam" parent="head_3_link" ros_topic="head_cam" update_rate="10" height="960" width="1280" > <!-- get this from config/head_cam.yaml -->
     <origin xyz="${head_cam_x} ${head_cam_y} ${head_cam_z}" rpy="${head_cam_roll} ${head_cam_pitch} ${head_cam_yaw}" />
   </xacro:usb_cam>
+  <xacro:realsense name="face_cam" ros_topic="face_cam" parent="head_3_link">
+    <origin xyz="${face_cam_x} ${face_cam_y} ${face_cam_z}" rpy="${face_cam_roll} ${face_cam_pitch} ${face_cam_yaw}" />
+  </xacro:realsense>
 
   <!--xacro:cob4_arm name="arm_right" parent="torso_3_link" has_podest="false">
     <origin xyz="${arm_right_x} ${arm_right_y} ${arm_right_z}" rpy="${arm_right_roll} ${arm_right_pitch} ${arm_right_yaw}" />
