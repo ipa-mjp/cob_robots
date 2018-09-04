@@ -49,6 +49,7 @@ group16:
     [init,init],
     [recover,recover],
     [front,move,front],
+    [fd01,move,fd01],
     [fd15,move,fd15],
     [fd30,move,fd30],
     #[front_up,move,front_up],
@@ -72,7 +73,8 @@ group17:
     [l45,move,l45],
     [l60,move,l60],
     [l75,move,l75],
-    [l90,move,l90]]
+    [l90,move,l90],
+    [l180,move,l180]]
 group18:
   group_name: torso
   component_name: torso
@@ -85,7 +87,8 @@ group18:
     [r45,move,r45],
     [r60,move,r60],
     [r75,move,r75],
-    [r90,move,r90]]
+    [r90,move,r90],
+    [r180,move,r180]]
 #group18:
 #  group_name: head
 #  component_name: head
