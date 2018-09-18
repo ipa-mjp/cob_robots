@@ -20,18 +20,17 @@ group10:
 #    [back,move,back],
 #    [left,move,left],
 #    [right,move,right]]
-group12:
-  group_name: arm_left
-  component_name: arm_left
-  buttons: [[stop,stop],
-    [init,init],
-    [recover,recover],
-    [home,move,home],
-    [folded,move,folded],
-    [side, move, side],
-    [wave_demo, move, wave_demo],
-    [hello, move, hello],
-    [call, move, call]]
+#group12:
+#  group_name: arm_left
+#  component_name: arm_left
+#  buttons: [[stop,stop],
+#    [init,init],
+#    [recover,recover],
+#    [home,move,home],
+#    [folded,move,folded],
+#    [side, move, side],
+#    [wave_demo, move, wave_demo],
+#    [hello, move, hello]]
 group13:
   group_name: arm_right
   component_name: arm_right
@@ -42,7 +41,24 @@ group13:
     [folded,move,folded],
     [side, move, side],
     [wave_demo, move, wave_demo],
+    [top_door_open_demo, move, top_door_open_demo],
+    [top_door_back, move, top_door_back],
     [hello, move, hello]]
+group14:
+  group_name: arm_right
+  component_name: arm_right
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [top_door_open1,move,top_door_open1],
+    [top_door_open2,move,top_door_open2],
+    [top_door_open3,move,top_door_open3],
+    [top_door_open4,move,top_door_open4],
+    [top_door_open5,move,top_door_open5],
+    [top_door_open6,move,top_door_open6],
+    [top_door_open7,move,top_door_open7],
+    [top_door_open8,move,top_door_open8],
+    [top_door_open9,move,top_door_open9]]
 group16:
   group_name: torso
   component_name: torso
@@ -50,6 +66,7 @@ group16:
     [init,init],
     [recover,recover],
     [front,move,front],
+    [fd01,move,fd01],
     [fd15,move,fd15],
     [fd30,move,fd30],
     #[front_up,move,front_up],
@@ -73,7 +90,8 @@ group17:
     [l45,move,l45],
     [l60,move,l60],
     [l75,move,l75],
-    [l90,move,l90]]
+    [l90,move,l90],
+    [l180,move,l180]]
 group18:
   group_name: torso
   component_name: torso
@@ -86,7 +104,8 @@ group18:
     [r45,move,r45],
     [r60,move,r60],
     [r75,move,r75],
-    [r90,move,r90]]
+    [r90,move,r90],
+    [r180,move,r180]]
 #group18:
 #  group_name: head
 #  component_name: head
