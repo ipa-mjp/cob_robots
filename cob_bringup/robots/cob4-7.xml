@@ -263,7 +263,7 @@
 			<arg name="sim" value="$(arg sim)"/>
 		</include-->
 
-		<include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/>
+                <!--include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/-->
 
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_bringup)/drivers/sound.launch">
