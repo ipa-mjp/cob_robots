@@ -41,8 +41,8 @@ group13:
     [folded,move,folded],
     [side, move, side],
     [wave_demo, move, wave_demo],
-    [top_door_open_demo, move, top_door_open_demo],
-    [top_door_back, move, top_door_back],
+#    [top_door_open_demo, move, top_door_open_demo],
+#    [top_door_back, move, top_door_back],
     [hello, move, hello]]
 group14:
   group_name: arm_right
@@ -50,15 +50,17 @@ group14:
   buttons: [[stop,stop],
     [init,init],
     [recover,recover],
-    [top_door_open1,move,top_door_open1],
-    [top_door_open2,move,top_door_open2],
-    [top_door_open3,move,top_door_open3],
-    [top_door_open4,move,top_door_open4],
-    [top_door_open5,move,top_door_open5],
-    [top_door_open6,move,top_door_open6],
-    [top_door_open7,move,top_door_open7],
-    [top_door_open8,move,top_door_open8],
-    [top_door_open9,move,top_door_open9]]
+    [asarob_hello,move,asarob_hello],
+    [asarob_hello1,move,asarob_hello1]]
+#    [top_door_open1,move,top_door_open1],
+#    [top_door_open2,move,top_door_open2],
+#    [top_door_open3,move,top_door_open3],
+#    [top_door_open4,move,top_door_open4],
+#    [top_door_open5,move,top_door_open5],
+#    [top_door_open6,move,top_door_open6],
+#    [top_door_open7,move,top_door_open7],
+#    [top_door_open8,move,top_door_open8],
+#    [top_door_open9,move,top_door_open9]]
 group16:
   group_name: torso
   component_name: torso
