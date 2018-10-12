@@ -52,7 +52,7 @@ group14:
     [recover,recover],
     [pose1,move,pose1],
     [pose2,move,pose2],
-    [armPose4Left,move,armPose4Left],
+    [armPose4left,move,armPose4left],
     [armPose4Middle,move,armPose4Middle],
     [armPose4Right,move,armPose4Right],
     [asarob_hello,move,asarob_hello],
