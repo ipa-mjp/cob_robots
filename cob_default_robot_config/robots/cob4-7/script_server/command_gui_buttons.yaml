@@ -51,7 +51,7 @@ group14:
     [init,init],
     [recover,recover],
     [pose1,move,pose1],
-    [pose2,move,pose2],
+    #[pose2,move,pose2],
     [armPose4left,move,armPose4left],
     [armPose4Middle,move,armPose4Middle],
     [armPose4Right,move,armPose4Right],
@@ -66,6 +66,19 @@ group14:
 #    [top_door_open7,move,top_door_open7],
 #    [top_door_open8,move,top_door_open8],
 #    [top_door_open9,move,top_door_open9]]
+group15:
+  group_name: arm_right
+  component_name: arm_right
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [point0,move,point0],
+    [point1,move,point1],
+    [point2,move,point2],
+    [point3,move,point3],
+    [point4,move,point4],
+    [point5,move,point5],
+    [point_to_tab,move,point_to_tab]]
 group16:
   group_name: torso
   component_name: torso
