@@ -42,6 +42,24 @@ group13:
     [side, move, side],
     [wave_demo, move, wave_demo],
     [hello, move, hello]]
+group14:
+  group_name: gripper_left
+  component_name: gripper_left
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [open,move,open],
+    [close, move, close]]
+group15:
+  group_name: gripper_right
+  component_name: gripper_right
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [open,move,open],
+    [close, move, close]]
 group16:
   group_name: torso
   component_name: torso
