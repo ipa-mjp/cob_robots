@@ -266,7 +266,7 @@
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
 
-		<!--include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/-->
+                <!--include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/-->
                 <include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
                         <arg name="robot" value="$(arg robot)"/>
                         <arg name="name" value="face_cam3d"/>
