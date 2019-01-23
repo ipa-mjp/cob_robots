@@ -90,6 +90,7 @@ group16:
     [fd01,move,fd01],
     [fd15,move,fd15],
     [fr15,move,fr15],
+    [fr45,move,fr45],
     [fd30,move,fd30],
     #[front_up,move,front_up],
     #[front_down,move,front_down],
