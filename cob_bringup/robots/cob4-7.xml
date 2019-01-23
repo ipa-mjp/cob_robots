@@ -10,7 +10,7 @@
 	<arg name="s1" default="localhost"/>
 	<arg name="h1" default="localhost"/>
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
-        <arg name="sim" default="true"/>
+	<arg name="sim" default="false"/>
 
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
@@ -83,8 +83,8 @@
 		<include file="$(find cob_bringup)/tools/base_collision_observer.launch">
 			<arg name="robot" value="$(arg robot)"/>
 		</include>
-                <include file="$(find cob_bringup)/tools/collision_monitor.launch"/>
-                <!--node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/-->
+		<!-- <include file="$(find cob_bringup)/tools/collision_monitor.launch"> -->
+		<node pkg="rostopic" type="rostopic" args="pub /safety_controller/state_is_valid std_msgs/Bool 'data: true' -r10" name="fake_collission_monitor" output="screen"/>
 
 		<include file="$(find cob_bringup)/tools/diagnostics_aggregator.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -148,27 +148,28 @@
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
 		</include>
-		<!--include file="$(find cob_bringup)/components/cam3d_zr300_rgbd.launch">
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_left"/>
-			<arg name="num_worker_threads" value="2"/>
 			<arg name="sim" value="$(arg sim)"/>
-		</include-->
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817412070119"/>
+		</include>
 		<include file="$(find cob_bringup)/drivers/light.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="light_torso"/>
 			<arg name="sim_enabled" value="$(arg sim)"/>
 		</include>
 
-		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="sensorring"/>
 			<arg name="can_device" value="can1"/>
-			<arg name="use_external_sync" value="true"/>
-			<arg name="start_external_sync" value="true"/>
+			<arg name="use_external_sync" value="false"/>
+			<arg name="start_external_sync" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
 		</include>
-		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="head"/>
 			<arg name="can_device" value="can1"/>
@@ -198,11 +199,12 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_r200_rgbd.launch">
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_down"/>
-			<arg name="num_worker_threads" value="2"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817412071213"/>
 		</include>
 	</group>
 
@@ -217,12 +219,13 @@
 				<arg name="ntp_server" value="$(arg b1)"/>
 			</include>
 		</group>
-		<!--include file="$(find cob_bringup)/components/cam3d_zr300_rgbd.launch">
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_right"/>
-			<arg name="num_worker_threads" value="2"/>
 			<arg name="sim" value="$(arg sim)"/>
-		</include-->
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817512070265"/>
+		</include>
 	</group>
 
 	<group>
@@ -237,12 +240,12 @@
 			</include>
 		</group>
 
-		<include file="$(find cob_bringup)/components/cam3d_openni2.launch">
+		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="sensorring_cam3d"/>
-			<arg name="data_skip" value="3"/>
-			<arg name="num_worker_threads" value="2"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="flip" value="true"/>
+			<arg name="serial_no" value="817412071179"/>
 		</include>
 	</group>
 
@@ -258,12 +261,12 @@
 			</include>
 		</group>
 
-		<!--include file="$(find cob_bringup)/components/cob4_head_camera.launch">
+		<include file="$(find cob_bringup)/components/cob4_head_camera.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="sim" value="$(arg sim)"/>
-		</include-->
+		</include>
 
-                <!--include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/-->
+		<!--include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/-->
 
 		<!-- start common nodes used in hardware and simulation -->
 		<include file="$(find cob_bringup)/drivers/sound.launch">

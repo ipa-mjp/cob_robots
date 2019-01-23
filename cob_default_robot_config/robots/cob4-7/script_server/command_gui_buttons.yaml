@@ -10,27 +10,27 @@ group10:
   buttons: [[stop,stop,omni],
     [init,init],
     [recover,recover]]
-#group11:
-#  group_name: sensorring
-#  component_name: sensorring
-#  buttons: [[stop,stop],
-#    [init,init],
-#    [recover,recover],
-#    [front,move,front],
-#    [back,move,back],
-#    [left,move,left],
-#    [right,move,right]]
-#group12:
-#  group_name: arm_left
-#  component_name: arm_left
-#  buttons: [[stop,stop],
-#    [init,init],
-#    [recover,recover],
-#    [home,move,home],
-#    [folded,move,folded],
-#    [side, move, side],
-#    [wave_demo, move, wave_demo],
-#    [hello, move, hello]]
+group11:
+  group_name: sensorring
+  component_name: sensorring
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [front,move,front],
+    [back,move,back],
+    [left,move,left],
+    [right,move,right]]
+group12:
+  group_name: arm_left
+  component_name: arm_left
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [side, move, side],
+    [wave_demo, move, wave_demo],
+    [hello, move, hello]]
 group13:
   group_name: arm_right
   component_name: arm_right
@@ -40,33 +40,8 @@ group13:
     [home,move,home],
     [folded,move,folded],
     [side, move, side],
-    [ship, move, ship],
     [wave_demo, move, wave_demo],
-#    [top_door_open_demo, move, top_door_open_demo],
-#    [top_door_back, move, top_door_back],
     [hello, move, hello]]
-group14:
-  group_name: arm_right
-  component_name: arm_right
-  buttons: [[stop,stop],
-    [init,init],
-    [recover,recover],
-    [pose1,move,pose1],
-    #[pose2,move,pose2],
-    [armPose4left,move,armPose4left],
-    [armPose4Middle,move,armPose4Middle],
-    [armPose4Right,move,armPose4Right],
-    [asarob_hello,move,asarob_hello],
-    [asarob_hello1,move,asarob_hello1]]
-#    [top_door_open1,move,top_door_open1],
-#    [top_door_open2,move,top_door_open2],
-#    [top_door_open3,move,top_door_open3],
-#    [top_door_open4,move,top_door_open4],
-#    [top_door_open5,move,top_door_open5],
-#    [top_door_open6,move,top_door_open6],
-#    [top_door_open7,move,top_door_open7],
-#    [top_door_open8,move,top_door_open8],
-#    [top_door_open9,move,top_door_open9]]
 group15:
   group_name: arm_right
   component_name: arm_right
@@ -87,20 +62,20 @@ group16:
     [init,init],
     [recover,recover],
     [front,move,front],
+    [front_up,move,front_up],
+    [front_down,move,front_down],
+    [back,move,back],
+    [back_up,move,back_up],
+    [back_down,move,back_down],
+    [left,move,left],
+    [right,move,right],
+    [nod,move,nod],
+    [shake,move,shake],
     [fd01,move,fd01],
     [fd15,move,fd15],
     [fr15,move,fr15],
     [fr45,move,fr45],
-    [fd30,move,fd30],
-    #[front_up,move,front_up],
-    #[front_down,move,front_down],
-    [back,move,back],
-    #[back_up,move,back_up],
-    #[back_down,move,back_down],
-    [left,move,left],
-    [right,move,right],
-    [nod,move,nod],
-    [shake,move,shake]]
+    [fd30,move,fd30]]
 group17:
   group_name: torso
   component_name: torso
@@ -175,7 +150,7 @@ group22:
     [red,trigger,setLightRed],
     [green,trigger,setLightGreen],
     [cyanSweep,trigger,setLightCyanSweep]]
-#group23:
-#  group_name: sound
-#  component_name: behavior
-#  buttons: [[hello,trigger,soundHello]]
+group23:
+  group_name: sound
+  component_name: behavior
+  buttons: [[hello,trigger,soundHello]]
