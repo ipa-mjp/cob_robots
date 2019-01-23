@@ -1,0 +1,4 @@
+diagnostics_name: face_cam3d
+topics: [/face_cam3d/rgb/camera_info, /face_cam3d/depth/camera_info]
+hz: 15
+hzerror: 5
