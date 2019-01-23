@@ -55,7 +55,9 @@ group15:
     [point4,move,point4],
     [point5,move,point5],
     [point_to_tab,move,point_to_tab],
-    [tab_to_point,move,tab_to_point]]
+    [tab_to_point,move,tab_to_point],
+    [point_to_tab_torso15,move,point_to_tab_torso15],
+    [tab_to_point_torso15,move,tab_to_point_torso15]]
 group16:
   group_name: torso
   component_name: torso
