@@ -71,7 +71,23 @@
 	<xacro:property name="def_arm_left_pitch" value="0"/>
 	<xacro:property name="def_arm_left_yaw" value="3.14159"/>
 
-	<!-- ***************************** -->
+        <!-- gripper right mount positions | relative to arm_right_7_link -->
+        <xacro:property name="def_gripper_right_x" value="0.0"/>
+        <xacro:property name="def_gripper_right_y" value="0.0"/>
+        <xacro:property name="def_gripper_right_z" value="0.0748"/>
+        <xacro:property name="def_gripper_right_roll" value="0.0"/>
+        <xacro:property name="def_gripper_right_pitch" value="0.0"/>
+        <xacro:property name="def_gripper_right_yaw" value="3.14159"/>
+
+        <!-- gripper left mount positions | relative to arm_left_7_link -->
+        <xacro:property name="def_gripper_left_x" value="0.0"/>
+        <xacro:property name="def_gripper_left_y" value="0.0"/>
+        <xacro:property name="def_gripper_left_z" value="0.0748"/>
+        <xacro:property name="def_gripper_left_roll" value="0.0"/>
+        <xacro:property name="def_gripper_left_pitch" value="0.0"/>
+        <xacro:property name="def_gripper_left_yaw" value="3.14159"/>
+
+        <!-- ***************************** -->
 	<!-- extrinsic camera calibration  -->
 	<!-- ***************************** -->
 	<!-- torso cam3d left mount positions | relative to torso_3_link -->
