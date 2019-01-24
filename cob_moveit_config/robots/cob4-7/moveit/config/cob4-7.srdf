@@ -37,6 +37,7 @@
     <disable_collisions link1="arm_left_1_link" link2="gripper_right_grasp_link" reason="Never" />
     <disable_collisions link1="arm_left_1_link" link2="head_1_link" reason="Never" />
     <disable_collisions link1="arm_left_1_link" link2="head_2_link" reason="Never" />
+    <disable_collisions link1="arm_left_1_link" link2="head_3_link" reason="Never" />
     <disable_collisions link1="arm_left_1_link" link2="head_base_link" reason="Never" />
     <disable_collisions link1="arm_left_1_link" link2="head_cam_link" reason="Never" />
     <disable_collisions link1="arm_left_1_link" link2="torso_1_link" reason="Never" />
@@ -269,6 +270,7 @@
     <disable_collisions link1="arm_right_1_link" link2="gripper_right_camera_link" reason="Never" />
     <disable_collisions link1="arm_right_1_link" link2="head_1_link" reason="Never" />
     <disable_collisions link1="arm_right_1_link" link2="head_2_link" reason="Never" />
+    <disable_collisions link1="arm_right_1_link" link2="head_3_link" reason="Never" />
     <disable_collisions link1="arm_right_1_link" link2="head_base_link" reason="Never" />
     <disable_collisions link1="arm_right_1_link" link2="head_cam_link" reason="Never" />
     <disable_collisions link1="arm_right_1_link" link2="torso_1_link" reason="Never" />
@@ -999,4 +1001,5 @@
     <disable_collisions link1="torso_cam3d_left_link" link2="torso_cam3d_right_link" reason="Never" />
     <disable_collisions link1="torso_cam3d_left_link" link2="torso_center_link" reason="Never" />
     <disable_collisions link1="torso_cam3d_right_link" link2="torso_center_link" reason="Never" />
+    <disable_collisions link1="face_cam_link" link2="head_3_link" reason="Never" />
 </robot>
