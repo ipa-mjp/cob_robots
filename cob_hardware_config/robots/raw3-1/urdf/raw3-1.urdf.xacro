@@ -27,7 +27,7 @@
   <xacro:include filename="$(find raw_description)/urdf/schmaltz_gripper/gripper.urdf.xacro" />
 
   <!-- arm camera -->
-  <xacro:include filename="$(find raw_description)/urdf/arm_camera/arm_camera.urdf.xacro" />
+  <xacro:include filename="$(find raw_description)/urdf/kinect_camera/kinect_camera.urdf.xacro" />
 
   <!-- sensors -->
   <xacro:include filename="$(find cob_description)/urdf/sensors/sick_s300_laser.urdf.xacro"/>
