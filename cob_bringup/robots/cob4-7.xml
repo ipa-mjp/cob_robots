@@ -12,6 +12,9 @@
 	<arg name="env-script" default="$(find cob_bringup)/env.sh"/>
 	<arg name="sim" default="false"/>
 
+	<!-- 324 improvements-->
+	<arg name="monitor" default="false"/>
+
 	<!-- upload robot description -->
 	<include file="$(find cob_hardware_config)/upload_robot.launch">
 		<arg name="robot" value="$(arg robot)"/>
@@ -31,7 +34,7 @@
 		<machine name="$(anon b1)" address="$(arg b1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
-		<group unless="$(arg sim)">
+		<group if="$(arg monitor)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg b1)"/>
@@ -118,7 +121,7 @@
 		<machine name="$(anon t1)" address="$(arg t1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
-		<group unless="$(arg sim)">
+		<group if="$(arg monitor)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg t1)"/>
@@ -132,9 +135,10 @@
 			<arg name="can_device" value="can0"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
+			<arg name="launch_prefix" value="nice -n -10 ionice -c2 -n0"/>
 		</include>
 
-		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="component_name" value="arm_left"/>
 			<arg name="can_device" value="can3"/>
@@ -147,7 +151,7 @@
 			<arg name="can_device" value="can2"/>
 			<arg name="sim" value="$(arg sim)"/>
 			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
-		</include>
+		</include-->
 		<include file="$(find cob_bringup)/components/cam3d_d435_rgbd.launch">
 			<arg name="robot" value="$(arg robot)"/>
 			<arg name="name" value="torso_cam3d_left"/>
@@ -168,6 +172,7 @@
 			<arg name="use_external_sync" value="false"/>
 			<arg name="start_external_sync" value="false"/>
 			<arg name="sim" value="$(arg sim)"/>
+			<arg name="launch_prefix" value="nice -n -10 ionice -c2 -n0"/>
 		</include>
 		<!--include file="$(find cob_bringup)/components/canopen_generic.launch">
 			<arg name="robot" value="$(arg robot)"/>
@@ -180,18 +185,18 @@
 		</include-->
 
 		<!-- start common nodes used in hardware and simulation -->
-		<include file="$(find cob_script_server)/launch/script_server.launch"/>
+		<!--include file="$(find cob_script_server)/launch/script_server.launch"/>
 		<include file="$(find cob_bringup)/tools/behavior.launch"/>
 		<include file="$(find cob_bringup)/tools/android.launch">
 			<arg name="robot" value="$(arg robot)"/>
-		</include>
+		</include-->
 	</group>
 
 	<group>
 		<machine name="$(anon t2)" address="$(arg t2)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
-		<group unless="$(arg sim)">
+		<group if="$(arg monitor)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg t2)"/>
@@ -206,13 +211,30 @@
 			<arg name="flip" value="true"/>
 			<arg name="serial_no" value="817412071213"/>
 		</include>
+
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm_right"/>
+			<arg name="can_device" value="can0"/>
+			<arg name="sim" value="$(arg sim)"/>
+			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
+			<arg name="launch_prefix" value="nice -n -10 ionice -c2 -n0"/>
+		</include>
+		<include file="$(find cob_bringup)/components/canopen_generic.launch">
+			<arg name="robot" value="$(arg robot)"/>
+			<arg name="component_name" value="arm_left"/>
+			<arg name="can_device" value="can1"/>
+			<arg name="sim" value="$(arg sim)"/>
+			<arg if="$(arg sim)" name="cartesian_control" value="true"/>
+			<arg name="launch_prefix" value="nice -n -10 ionice -c2 -n0"/>
+		</include>
 	</group>
 
 	<group>
 		<machine name="$(anon t3)" address="$(arg t3)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
-		<group unless="$(arg sim)">
+		<group if="$(arg monitor)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg t3)"/>
@@ -226,13 +248,20 @@
 			<arg name="flip" value="true"/>
 			<arg name="serial_no" value="817512070265"/>
 		</include>
+
+		<!-- start common nodes used in hardware and simulation -->
+		<include file="$(find cob_script_server)/launch/script_server.launch"/>
+		<include file="$(find cob_bringup)/tools/behavior.launch"/>
+		<include file="$(find cob_bringup)/tools/android.launch">
+			<arg name="robot" value="$(arg robot)"/>
+		</include>
 	</group>
 
 	<group>
 		<machine name="$(anon s1)" address="$(arg s1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
-		<group unless="$(arg sim)">
+		<group if="$(arg monitor)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg s1)"/>
@@ -253,7 +282,7 @@
 		<machine name="$(anon h1)" address="$(arg h1)" env-loader="$(arg env-script)" default="true" timeout="30"/>
 
 		<!-- start hardware -->
-		<group unless="$(arg sim)">
+		<group if="$(arg monitor)">
 			<include file="$(find cob_bringup)/tools/pc_monitor.launch">
 				<arg name="robot" value="$(arg robot)"/>
 				<arg name="pc" value="$(arg h1)"/>

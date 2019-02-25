@@ -11,6 +11,8 @@
 	<arg name="cartesian_control" default="false"/>
 	<arg name="sim" default="false"/>
 
+	<arg name="launch_prefix" default=""/>
+
 	<include unless="$(arg sim)" file="$(find cob_bringup)/drivers/canopen_402.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="$(arg component_name)"/>
@@ -18,6 +20,7 @@
 		<arg name="interval_ms" value="$(arg interval_ms)"/>
 		<arg name="use_external_sync" value="$(arg use_external_sync)"/>
 		<arg name="start_external_sync" value="$(arg start_external_sync)"/>
+		<arg name="launch_prefix" value="$(arg launch_prefix)"/>
 	</include>
 	<node if="$(arg sim)" ns="$(arg component_name)" pkg="cob_helper_tools" type="fake_driver.py" name="fake_driver" cwd="node" respawn="false" output="screen"/>
 
