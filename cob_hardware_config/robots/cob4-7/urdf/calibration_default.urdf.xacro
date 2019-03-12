@@ -132,11 +132,18 @@
 
 
         <!-- cam | handeye calibration | relative to head_3_link -->
-        <xacro:property name="def_face_cam_x" value="-0.18486"/>
+        <!--xacro:property name="def_face_cam_x" value="-0.18486"/>
         <xacro:property name="def_face_cam_y" value="0.0"/>
         <xacro:property name="def_face_cam_z" value="0.38953"/>
-        <xacro:property name="def_face_cam_roll" value="0.0"/> <!-- -1.57079 -->
-        <xacro:property name="def_face_cam_pitch" value="-0.1745"/>
-        <xacro:property name="def_face_cam_yaw" value="0.0"/>
+        <xacro:property name="def_face_cam_roll" value="0.0"/--> <!-- -1.57079 -->
+        <!--xacro:property name="def_face_cam_pitch" value="-0.1745"/>
+        <xacro:property name="def_face_cam_yaw" value="0.0"/-->
+	<!-- new ones from ipa_calibration -->
+        <xacro:property name="def_face_cam_x" value="-0.199755"/>
+        <xacro:property name="def_face_cam_y" value="0.0370429"/>
+        <xacro:property name="def_face_cam_z" value="0.358513"/>
+        <xacro:property name="def_face_cam_roll" value="0.0132327"/> <!-- -1.57079 -->
+        <xacro:property name="def_face_cam_pitch" value="-0.121456"/>
+        <xacro:property name="def_face_cam_yaw" value="-0.0432365"/>
 
 </robot>
