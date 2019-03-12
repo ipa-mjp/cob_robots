@@ -121,6 +121,24 @@ group18:
 #    [right,move,right],
 #    [nod,move,nod],
 #    [shake,move,shake]]
+group19:
+  group_name: gripper_left
+  component_name: gripper_left
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [open,move,open],
+    [close, move, close]]
+group20:
+  group_name: gripper_right
+  component_name: gripper_right
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [open,move,open],
+    [close, move, close]]
 group21:
   group_name: mimic
   component_name: behavior
