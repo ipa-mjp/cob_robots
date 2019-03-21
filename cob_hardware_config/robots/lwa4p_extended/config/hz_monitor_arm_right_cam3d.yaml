@@ -1,0 +1,4 @@
+diagnostics_name: arm_right_cam3d
+topics: [/arm_right_cam3d/rgb/camera_info]
+hz: 30
+hzerror: 5
