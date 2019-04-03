@@ -35,3 +35,20 @@ nodes:
     
     vel_to_device: "rint(vel * 4233.301975541)" # m/s -> halfdegree/s
     vel_from_device: "obj606C / 4233.301975541" # actual velocity [halfdegree/s] -> m/s
+    - name: arm_joint_2
+      id: 10
+      pos_to_device: "rint(rad2deg(pos + 79.98883374526848)*1217.9553777880542)"
+      pos_from_device: "deg2rad(obj6064)/1217.9553777880542 - 79.98883374526848"
+
+    - name: arm_joint_3
+      id: 20
+      pos_to_device: "rint(rad2deg(pos))"
+      pos_from_device: "deg2rad(obj6064)"
+
+
+      - name: arm_joint_4
+        id: 30
+        pos_to_device: "rint((rad2deg(pos)+97.38247821073821)*1000)" #0.1 is the offset value
+        pos_from_device: "deg2rad(obj6064)/1000 - 97.38247821073821"
+        #pos_to_device: "(pos+ 8.570809981981798)*651000.8986 "
+        #pos_from_device: "obj6064*(1.0/651000.8986) - 8.570809981981798"
