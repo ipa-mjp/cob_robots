@@ -6,3 +6,7 @@ controller_list:
       - arm_joint_3
       - arm_joint_4
       - arm_joint_5
+  - name: fake_gripper_controller
+    joints:
+      - arm_big_finger_left_join
+      - arm_big_finger_right_join
