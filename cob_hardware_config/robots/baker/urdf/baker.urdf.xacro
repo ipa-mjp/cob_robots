@@ -6,7 +6,7 @@
   <xacro:include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
   <!-- baker_arm -->
-  <!--xacro:include filename="$(find cob_description)/urdf/baker_arm/baker_arm.urdf.xacro" /-->
+  <xacro:include filename="$(find cob_description)/urdf/baker_arm/baker_arm.urdf.xacro" />
 
   <!-- baker_gripper -->
   <xacro:include filename="$(find cob_description)/urdf/baker_gripper/baker_gripper.urdf.xacro" />
@@ -15,8 +15,8 @@
   <!-- Used for fixing robot to Gazebo -->
   <link name="world"/>
 
-  <!--xacro:baker name="arm" parent="world"/-->
+  <xacro:baker name="arm" parent="world"/>
 
-  <xacro:baker_arm_gripper name="gripper" parent="world"/>
+  <xacro:baker_arm_gripper name="gripper" parent="arm_gripper"/>
 
 </robot>

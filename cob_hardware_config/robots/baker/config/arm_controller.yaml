@@ -1,5 +1,5 @@
 ## joint_names
-joint_names: [arm_joint_2,arm_joint_3,arm_joint_4,arm_joint_5] #arm_big_finger_left_join, arm_big_finger_right_join
+joint_names: [arm_joint_1,arm_joint_2,arm_joint_3,arm_joint_4,arm_joint_5] #arm_big_finger_left_join, arm_big_finger_right_join
 
 ## control_mode_adapter
 max_command_silence: 0.5
@@ -13,6 +13,7 @@ joint_state_controller:
 joint_trajectory_controller:
   type: position_controllers/JointTrajectoryController
   joints:
+     - arm_joint_1
      - arm_joint_2
      - arm_joint_3
      - arm_joint_4
@@ -34,10 +35,11 @@ joint_trajectory_controller:
 joint_group_position_controller:
   type: position_controllers/JointGroupPositionController
   joints:
-    - arm_joint_2
-    - arm_joint_3
-    - arm_joint_4     #- arm_big_finger_left_join
-    - arm_joint_5
+      - arm_joint_1
+      - arm_joint_2
+      - arm_joint_3
+      - arm_joint_4
+      - arm_joint_5
     #- arm_big_finger_left_join
     #- arm_big_finger_right_join
   required_drive_mode: 1
@@ -46,10 +48,11 @@ joint_group_position_controller:
 joint_group_velocity_controller:
   type: velocity_controllers/JointGroupVelocityController
   joints:
-    - arm_joint_2
-    - arm_joint_3
-    - arm_joint_4     #- arm_big_finger_left_join
-    - arm_joint_5
+      - arm_joint_1
+      - arm_joint_2
+      - arm_joint_3
+      - arm_joint_4
+      - arm_joint_5
     #- arm_big_finger_left_join
     #- arm_big_finger_right_join
   required_drive_mode: 2
