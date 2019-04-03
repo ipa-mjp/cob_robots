@@ -1,0 +1,42 @@
+name: gripper
+
+sync:
+  interval_ms: 10
+  overflow: 0
+
+defaults:
+  eds_pkg: cob_hardware_config
+  eds_file: "robots/common/Elmo.dcf"
+
+  # canopen_chain_node settings ..
+  #motor_allocator: canopen::Motor402::Allocator # select allocator for motor layer
+
+  motor_layer:  # settings passed to motor layer (plugin-specific)
+    switching_state: 4 # stop motor before switching state
+
+  #pos_to_device: "rint(rad2deg(pos - 0.17)*80)"
+  #pos_from_device: "deg2rad(obj6064)/80 + 0.17"
+
+  #vel_to_device: "rint(rad2deg(vel)*80)"
+  #vel_from_device: "deg2rad(obj606C)/80"
+
+  #eff_to_device: "rint(eff)"
+  #eff_from_device: "obj6077"
+
+nodes:
+
+  - name: arm_big_finger_left_join
+    id: 10
+    pos_to_device: "rint(pos * 4096000)"
+    pos_from_device: "obj6064 / 4096000"
+
+    vel_to_device: "rint(vel * 4096000)"
+    vel_from_device: "obj606C / 4096000"
+
+  - name: arm_big_finger_right_join
+    id: 10
+    pos_to_device: "rint(pos * 4096000)"
+    pos_from_device: "obj6064 / 4096000"
+
+    vel_to_device: "rint(vel * 4096000)"
+    vel_from_device: "obj606C / 4096000"

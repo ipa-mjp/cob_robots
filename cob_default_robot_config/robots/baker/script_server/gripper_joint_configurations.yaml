@@ -1,0 +1,18 @@
+joint_names: ['gripper_big_finger_left_join','gripper_big_finger_right_join','gripper_small_finger_left_join','gripper_small_finger_right_join']
+
+#action_name: /arm_controller/follow_joint_trajectory
+action_name: /gripper/joint_trajectory_controller/follow_joint_trajectory
+#service_ns: /arm_controller
+service_ns: /gripper
+default_vel: 0.6
+
+# parallel part of the gripper
+super_close: [[0.00840682135925011, 0.00, 0.0, 0.0]]
+close: [[0.007000002174089258, -0.007000002174089258, 0.0, 0.0]]
+open: [[0.019039989562279997, -0.019039989562279997, 0.0, 0.0]]
+home: [[0.009799995311056728, -0.009799995311056728, 0.0, 0.0]]
+
+# actuate small part of finger
+small_finger_open: [[0.009799995311056728, -0.012999951224514835, -1.9999999462715827, -1.9999999698415296]]
+small_finger_close: [[0.009799995311056728, -0.012999951224514835, -0.0, -0.0]]
+small_finger_home: [[0.009799995311056728, -0.012999951224514835, -1.0, -1.0]]
