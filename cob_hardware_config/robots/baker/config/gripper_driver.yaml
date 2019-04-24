@@ -25,18 +25,15 @@ defaults:
 
 nodes:
 
-  - name: arm_big_finger_left_join
-    id: 10
-    pos_to_device: "rint(pos * 4096000)"
-    pos_from_device: "obj6064 / 4096000"
+  - name: gripper_big_finger_left_join
+    id: 60
+    eds_file: "robots/common/Elmo.dcf"
+    #pos_to_device: "rint(pos * 4096000)"
+    #pos_from_device: "obj6064 / 4096000"
 
-    vel_to_device: "rint(vel * 4096000)"
-    vel_from_device: "obj606C / 4096000"
+    #vel_to_device: "rint(vel * 4096000)"
+    #vel_from_device: "obj606C / 4096000"
 
-  - name: arm_big_finger_right_join
-    id: 10
-    pos_to_device: "rint(pos * 4096000)"
-    pos_from_device: "obj6064 / 4096000"
-
-    vel_to_device: "rint(vel * 4096000)"
-    vel_from_device: "obj606C / 4096000"
+  #- name: gripper_small_finger_left_join
+    #id: 60
+    #eds_file: "robots/common/Elmo.dcf"

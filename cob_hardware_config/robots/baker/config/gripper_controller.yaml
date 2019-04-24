@@ -1,5 +1,5 @@
 ## joint_names
-joint_names: [gripper_big_finger_left_join,gripper_small_finger_left_join,gripper_big_finger_right_join,gripper_small_finger_right_join]
+joint_names: [gripper_big_finger_left_join]
 
 ## control_mode_adapter
 max_command_silence: 0.5
@@ -14,9 +14,9 @@ joint_trajectory_controller:
   type: position_controllers/JointTrajectoryController
   joints:
      - gripper_big_finger_left_join
-     - gripper_small_finger_left_join
-     - gripper_big_finger_right_join
-     - gripper_small_finger_right_join
+     #- gripper_small_finger_left_join
+     #- gripper_big_finger_right_join
+     #- gripper_small_finger_right_join
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.05
@@ -32,9 +32,9 @@ joint_group_position_controller:
   type: position_controllers/JointGroupPositionController
   joints:
       - gripper_big_finger_left_join
-      - gripper_small_finger_left_join
-      - gripper_big_finger_right_join
-      - gripper_small_finger_right_join
+      #- gripper_small_finger_left_join
+      #- gripper_big_finger_right_join
+      #- gripper_small_finger_right_join
   required_drive_mode: 1
 
 ## velocity controller
@@ -42,8 +42,8 @@ joint_group_velocity_controller:
   type: velocity_controllers/JointGroupVelocityController
   joints:
       - gripper_big_finger_left_join
-      - gripper_small_finger_left_join
-      - gripper_big_finger_right_join
-      - gripper_small_finger_right_join
+      #- gripper_small_finger_left_join
+      #- gripper_big_finger_right_join
+      #- gripper_small_finger_right_join
   required_drive_mode: 2
 
