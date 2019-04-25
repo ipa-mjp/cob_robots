@@ -14,8 +14,9 @@ defaults:
   motor_layer:  # settings passed to motor layer (plugin-specific)
     switching_state: 4 # stop motor before switching state
 
-  #pos_to_device: "rint(rad2deg(pos - 0.17)*80)"
-  #pos_from_device: "deg2rad(obj6064)/80 + 0.17"
+  # here, 1,57 rad = 10,7793 rad in Elmo (1,57/10,7793 = 0.145649532) and unit factor is 651.8986
+  pos_to_device: "(pos/0.145649532)*651.8986"
+  pos_from_device: "(obj6064*0.145649532)/651.8986"
 
   #vel_to_device: "rint(rad2deg(vel)*80)"
   #vel_from_device: "deg2rad(obj606C)/80"
@@ -27,27 +28,31 @@ nodes:
 
   - name: arm_joint_2
     id: 10
-    pos_to_device: "(pos + 8562.5534)*651.8986"
-    pos_from_device: "obj6064/651.8986 - 8562.5534"
-    #vel_to_device: "rint(rad2deg(vel)*80)"
-    #vel_from_device: "deg2rad(obj606C)/80"
+    #pos_to_device: "pos*651.8986"
+    #pos_from_device: "obj6064/651.8986"
+    #vel_to_device: "vel*651.8986"
+    #vel_from_device: "obj606C/651.8986"
 
   - name: arm_joint_3
     id: 20
-    pos_to_device: "(pos - 17136.95)*651.8986"
-    pos_from_device: "obj6064/651.8986 + 17136.95"
-    vel_to_device: "(vel*80)"
-    vel_from_device: "obj606C/80"
+    #pos_to_device: "pos*651.8986"
+    #pos_from_device: "obj6064/651.8986"
+    #vel_to_device: "vel*651.8986"
+    #vel_from_device: "obj606C/651.8986"
 
   - name: arm_joint_4
     id: 30
-    pos_to_device: "(pos + 8559.5534)*651.8986"
-    pos_from_device: "obj6064/651.8986 - 8559.5534"
+    #pos_to_device: "pos*651.8986"
+    #pos_from_device: "obj6064/651.8986"
+    #vel_to_device: "vel*651.8986"
+    #vel_from_device: "obj606C/651.8986"
 
   - name: arm_joint_5
     id: 40
-    pos_to_device: "(pos + 8559.5534)*651.8986"
-    pos_from_device: "obj6064/651.8986 - 8559.5534"
+    #pos_to_device: "(pos/0.145649532)*651.8986"
+    #pos_from_device: "(obj6064*0.145649532)/651.8986"
+    #vel_to_device: "vel*651.8986"
+    #vel_from_device: "obj606C/651.8986"
 
 
  # - name: arm_big_finger_left_join
