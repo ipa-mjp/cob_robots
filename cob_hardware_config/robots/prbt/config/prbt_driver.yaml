@@ -7,7 +7,7 @@ sync:
   overflow: 0
 
 defaults:
-  eds_pkg: prbt_support
+  eds_pkg: cob_hardware_config
   eds_file: "config/prbt_0_1.dcf"
 
 nodes:

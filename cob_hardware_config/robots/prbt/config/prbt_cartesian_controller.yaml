@@ -1,6 +1,6 @@
 ## Cartesian controller parameters
-chain_base_link: arm_base_link
-chain_tip_link: arm_7_link
+chain_base_link: prbt_base_link
+chain_tip_link: prbt_tool0
 root_frame: world
 
 # twist controller parameters
@@ -53,12 +53,12 @@ twist_controller:
   max_vel_rot_base: 0.5
 
   # the following links of the chain are considered for collision avoidance
-  collision_check_links: [arm_1_link, arm_2_link, arm_3_link, arm_4_link, arm_5_link, arm_6_link, arm_7_link]
+  collision_check_links: [prbt_link_1, prbt_link_2, prbt_link_3, prbt_link_4, prbt_link_5, prbt_link_6]
 
 # frame_tracker + interactive_marker
 frame_tracker:
   update_rate: 50.0
-  target_frame: arm_7_target
+  target_frame: prbt_tool0
   marker_scale: 0.3
   movable_trans: true
   movable_rot: true

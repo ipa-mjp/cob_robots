@@ -3,11 +3,11 @@
        name="lwa4p_extended" >
 
   <!-- common stuff -->
-  <xacro:include filename="$(find schunk_description)/urdf/common.xacro" />
-  <xacro:include filename="$(find schunk_description)/urdf/materials.urdf.xacro" />
+  <xacro:include filename="$(find pd_benchmarking)/urdf/common.xacro" />
+  <xacro:include filename="$(find pd_benchmarking)/urdf/materials.urdf.xacro" />
 
   <!-- schunk lwa4p_extended -->
-  <xacro:include filename="$(find schunk_description)/urdf/lwa4p_extended/lwa4p_extended.urdf.xacro" />
+  <xacro:include filename="$(find pd_benchmarking)/urdf/lwa4p_extended/lwa4p_extended.urdf.xacro" />
 
   <!-- Used for fixing robot to Gazebo -->
   <link name="world"/>
