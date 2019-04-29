@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="cob4_robot" >
+
+  <!-- common stuff -->
+  <xacro:include filename="$(find pd_benchmarking)/urdf/common.xacro" />
+  <xacro:include filename="$(find pd_benchmarking)/urdf/materials.urdf.xacro" />
+
+  <!-- schunk lwa4p_extended -->
+  <xacro:include filename="$(find pd_benchmarking)/urdf/cob4_robot/cob4_robot.urdf.xacro" />
+
+  <!-- Used for fixing robot to Gazebo -->
+  <link name="world"/>
+
+  <!-- arm -->
+  <xacro:cob4_robot name="arm" parent="world" has_podest="true">
+    <!--origin xyz="0.041 0 0.7" rpy="1.57 0 0" /--> <!--slightly above gazebo plane, mounting position of arm into flange-->
+    <origin xyz="0.002 0.014 1.007" rpy="1.57 -0.006 3.139" /> <!--slightly above gazebo plane, mounting position of arm into flange-->
+  </xacro:cob4_robot>
+
+</robot>
