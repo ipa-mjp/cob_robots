@@ -15,8 +15,8 @@ defaults:
     switching_state: 4 # stop motor before switching state
 
   # here, 1,57 rad = 10,7793 rad in Elmo (1,57/10,7793 = 0.145649532) and unit factor is 651.8986
-  pos_to_device: "(pos/0.145649532)*651.8986"
-  pos_from_device: "(obj6064*0.145649532)/651.8986"
+  #pos_to_device: "(pos/0.145649532)*651.8986"
+  #pos_from_device: "(obj6064*0.145649532)/651.8986"
 
   #vel_to_device: "rint(rad2deg(vel)*80)"
   #vel_from_device: "deg2rad(obj606C)/80"
@@ -28,29 +28,46 @@ nodes:
 
   - name: arm_joint_2
     id: 10
-    #pos_to_device: "pos*651.8986"
-    #pos_from_device: "obj6064/651.8986"
+    pos_to_device: "(pos/0.145649532)*651.8986"
+    pos_from_device: "(obj6064*0.145649532)/651.8986"
     #vel_to_device: "vel*651.8986"
     #vel_from_device: "obj606C/651.8986"
 
   - name: arm_joint_3
     id: 20
-    #pos_to_device: "pos*651.8986"
-    #pos_from_device: "obj6064/651.8986"
+    pos_to_device: "(pos/0.145649532)*651.8986"
+    pos_from_device: "(obj6064*0.145649532)/651.8986"
     #vel_to_device: "vel*651.8986"
     #vel_from_device: "obj606C/651.8986"
 
   - name: arm_joint_4
     id: 30
-    #pos_to_device: "pos*651.8986"
-    #pos_from_device: "obj6064/651.8986"
+    pos_to_device: "(pos/0.145649532)*651.8986"
+    pos_from_device: "(obj6064*0.145649532)/651.8986"
     #vel_to_device: "vel*651.8986"
     #vel_from_device: "obj606C/651.8986"
 
   - name: arm_joint_5
     id: 40
-    #pos_to_device: "(pos/0.145649532)*651.8986"
-    #pos_from_device: "(obj6064*0.145649532)/651.8986"
+    pos_to_device: "(pos/0.145649532)*651.8986"
+    pos_from_device: "(obj6064*0.145649532)/651.8986"
+    #vel_to_device: "vel*651.8986"
+    #vel_from_device: "obj606C/651.8986"
+
+  - name: arm_joint_1
+    id: 50
+    eds_file: "robots/common/Elmo.dcf"
+    # convert half degree to m and vice versa
+    pos_to_device: "(pos / 0.001034507)*962.2126"
+    pos_from_device: "(obj6064 * 0.001034507)/962.2126"
+
+    #pos_to_device: "(pos / 0.000793457)*962.2126"
+    #pos_from_device: "(obj6064 * 0.000793457)/962.2126"
+
+    # convert degree to m and vice versa
+    #pos_to_device: "(pos / 0.00051725356504)*962.2126"
+    #pos_from_device: "(obj6064 * 0.00051725356504)/962.2126"
+
     #vel_to_device: "vel*651.8986"
     #vel_from_device: "obj606C/651.8986"
 
