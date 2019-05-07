@@ -28,8 +28,8 @@ nodes:
   - name: gripper_big_finger_left_join
     id: 60
     eds_file: "robots/common/Elmo.dcf"
-    #pos_to_device: "rint(pos * 4096000)"
-    #pos_from_device: "obj6064 / 4096000"
+    pos_to_device: "pos * 1592"
+    pos_from_device: "obj6064 / 1592"
 
     #vel_to_device: "rint(vel * 4096000)"
     #vel_from_device: "obj606C / 4096000"

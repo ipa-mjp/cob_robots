@@ -15,6 +15,10 @@
             <arg name="robot" value="$(arg robot)"/>
     </include>
 
+    <include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+        <arg name="robot" value="$(arg robot)"/>
+    </include>
+
     <!-- canopen -->
     <include file="$(find cob_bringup)/components/canopen_generic.launch">
         <arg name="robot" value="$(arg robot)"/>
@@ -30,16 +34,12 @@
         <arg name="sim" value="$(arg sim)"/>
     </include-->
 
-    <include file="$(find cob_bringup)/components/canopen_generic.launch">
+    <!--include file="$(find cob_bringup)/components/canopen_generic.launch">
         <arg name="robot" value="$(arg robot)"/>
         <arg name="component_name" value="gripper"/>
         <arg name="can_device" value="can0"/>
         <arg name="sim" value="$(arg sim)"/>
-    </include>
-
-    <include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
-        <arg name="robot" value="$(arg robot)"/>
-    </include>
+    </include-->
 
     <!-- start common nodes used in hardware and simulation -->
     <include file="$(find cob_script_server)/launch/script_server.launch"/>
