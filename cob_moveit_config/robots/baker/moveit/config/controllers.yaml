@@ -12,3 +12,11 @@ controller_list:
       #- arm_small_finger_left_join
       - arm_big_finger_right_join
       #- arm_small_finger_right_join
+  - name: gripper/joint_trajectory_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+      - gripper_finger1_joint 
+      #- arm_small_finger_left_join
+      #- arm_big_finger_right_join
+      #- arm_small_finger_right_join
