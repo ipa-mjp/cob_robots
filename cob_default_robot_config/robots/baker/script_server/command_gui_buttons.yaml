@@ -10,7 +10,8 @@ group1:
   buttons: [[stop,stop],
     [init,init],
     [recover,recover],
-    [home,move,home]]
+    [home,move,home],
+    [grasp,move,grasp]]
 group2:
   group_name: gripper
   component_name: gripper
