@@ -18,17 +18,5 @@ group2:
   buttons: [[stop,stop],
     [init,init],
     [recover,recover],
-    [home,move,home],
-    [open,move,open],
-    [close,move,close],
-    [super_close,move,super_close]]
-group3:
-  group_name: gripper
-  component_name: gripper
-  buttons: [[stop,stop],
-    [init,init],
-    [recover,recover],
-    [small_finger_home,move,small_finger_home],
-    [small_finger_open,move,small_finger_open],
-    [small_finger_close,move,small_finger_close]]
+    [home,move,home]]
 

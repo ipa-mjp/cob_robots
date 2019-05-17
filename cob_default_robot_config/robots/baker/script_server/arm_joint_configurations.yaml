@@ -3,7 +3,7 @@ joint_names: ['arm_joint_1','arm_joint_2','arm_joint_3','arm_joint_4','arm_joint
 #action_name: /arm_controller/follow_joint_trajectory
 action_name: /arm/joint_trajectory_controller/follow_joint_trajectory
 #service_ns: /arm_controller
-service_ns: /arm
+service_ns: /arm/driver
 default_vel: 0.6
 
 # back side positions
