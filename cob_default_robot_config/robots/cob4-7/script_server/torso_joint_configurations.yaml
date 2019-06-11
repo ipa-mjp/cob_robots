@@ -1,9 +1,28 @@
-joint_names: ["torso_2_joint","torso_3_joint"]
+joint_names: [torso_2_joint, torso_3_joint]
 action_name: /torso/joint_trajectory_controller/follow_joint_trajectory
 service_ns: /torso/driver
 default_vel: 0.4
 
 home: [[0.0,0.0]]
+
+r15: [[0.0,-0.26]]
+r30: [[0.0,-0.52]]
+r45: [[0.0,-0.79]]
+r60: [[0.0,-1.05]]
+r75: [[0.0,-1.31]]
+r90: [[0.0,-1.57]]
+
+l15: [[0.0,0.26]]
+l30: [[0.0,0.52]]
+l45: [[0.0,0.79]]
+l60: [[0.0,1.05]]
+l75: [[0.0,1.31]]
+l90: [[0.0,1.57]]
+
+fd15: [[-0.5,0.25]]
+fr15: [[-0.5,0.28]]
+fr45: [[-0.5,-0.52]]
+fd30: [[-1.0,0.5]]
 
 front: [[0.0, 0.0]]
 front_up: [[1.0, -0.5]]

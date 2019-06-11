@@ -6,7 +6,7 @@
   <xacro:include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
   <!-- p_rob_arm -->
-  <xacro:include filename="$(find raw_description)/urdf/p_rob_arm/p_rob.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/p_rob/p_rob.urdf.xacro" />
 
   <!-- Used for fixing robot to Gazebo -->
   <link name="world"/>
