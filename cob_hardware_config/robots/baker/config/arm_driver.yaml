@@ -56,3 +56,10 @@ nodes:
       pos_from_device: "(-1.0)*(obj6064 / 4500 )"
       vel_to_device: "(-1.0)*(vel * 4500)"
       vel_from_device: "(-1.0)*(obj606C / 4500 )"
+
+    #- name: arm_joint_5
+    #  id: 40
+    #  pos_to_device: "(-1.0)*(pos * 4500)"
+    #  pos_from_device: "(-1.0)*(obj6064 / 4500 )"
+    #  vel_to_device: "(-1.0)*(vel * 4500)"
+    #  vel_from_device: "(-1.0)*(obj606C / 4500 )"

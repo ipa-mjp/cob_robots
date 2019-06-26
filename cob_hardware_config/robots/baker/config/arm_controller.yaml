@@ -17,6 +17,7 @@ joint_trajectory_controller:
      - arm_joint_2
      - arm_joint_3
      - arm_joint_4
+     #- arm_joint_5
   constraints:
       goal_time: 0.6
       stopped_velocity_tolerance: 0.05
@@ -35,6 +36,7 @@ joint_group_position_controller:
     - arm_joint_2
     - arm_joint_3
     - arm_joint_4
+    #- arm_joint_5
   required_drive_mode: 1
 
 ## velocity controller
@@ -45,5 +47,6 @@ joint_group_velocity_controller:
     - arm_joint_2
     - arm_joint_3
     - arm_joint_4
+    #- arm_joint_5
   required_drive_mode: 2
 
