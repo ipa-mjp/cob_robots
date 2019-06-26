@@ -23,25 +23,12 @@ defaults:
   #  switching_state: 4 # stop motor before switching state
 
 nodes:
-    - name: arm_joint_1
-      id: 50
-      #dcf_overlay:
-      #  "6098": "1"            # Homing methods (comes from Elmo)
-      #  "6099sub1": "10000.333"    # Homing speed utill reach to swtich (FLS/RLS)
-      #  "6099sub2": "10000.333"    # Homing speed from swtich (FLS/RLS) to negative direction
-      #  "609A": "10000.333"        # Homing acceleration
-
-      pos_to_device: "(pos / 0.001034507)*962.2126"
-      pos_from_device: "(obj6064 * 0.001034507)/962.2126"
-      #vel_to_device: "(vel/ 0.001034507)*962.2126"
-      #vel_from_device: "(obj606C* 0.001034507)/962.2126"
-
     - name: arm_joint_2
       id: 10
-      pos_to_device: "(pos * 4000)"
-      pos_from_device: "(obj6064 / 4000 )"
-      vel_to_device: "(vel * 4000)"
-      vel_from_device: "(obj606C / 4000 )"
+      pos_to_device: "(-1.0)*(pos * 4000)"
+      pos_from_device: "(-1.0)*(obj6064 / 4000 )"
+      vel_to_device: "(-1.0)*(vel * 4000)"
+      vel_from_device: "(-1.0)*(obj606C / 4000 )"
 
     - name: arm_joint_3
       id: 20
@@ -52,7 +39,7 @@ nodes:
 
     - name: arm_joint_4
       id: 30
-      pos_to_device: "(pos * 4500)"
-      pos_from_device: "(obj6064 / 4500 )"
-      vel_to_device: "(vel * 4500)"
-      vel_from_device: "(obj606C / 4500 )"
+      pos_to_device: "(-1.0)*(pos * 4500)"
+      pos_from_device: "(-1.0)*(obj6064 / 4500 )"
+      vel_to_device: "(-1.0)*(vel * 4500)"
+      vel_from_device: "(-1.0)*(obj606C / 4500 )"

@@ -1,5 +1,5 @@
 ## joint_names
-joint_names: [arm_joint_1,arm_joint_2,arm_joint_3,arm_joint_4]
+joint_names: [arm_joint_2,arm_joint_3,arm_joint_4]
 
 ## control_mode_adapter
 max_command_silence: 0.5
@@ -13,7 +13,6 @@ joint_state_controller:
 joint_trajectory_controller:
   type: position_controllers/JointTrajectoryController
   joints:
-     - arm_joint_1
      - arm_joint_2
      - arm_joint_3
      - arm_joint_4
@@ -31,7 +30,6 @@ joint_trajectory_controller:
 joint_group_position_controller:
   type: position_controllers/JointGroupPositionController
   joints:
-    - arm_joint_1
     - arm_joint_2
     - arm_joint_3
     - arm_joint_4
@@ -41,7 +39,6 @@ joint_group_position_controller:
 joint_group_velocity_controller:
   type: velocity_controllers/JointGroupVelocityController
   joints:
-    - arm_joint_1
     - arm_joint_2
     - arm_joint_3
     - arm_joint_4
