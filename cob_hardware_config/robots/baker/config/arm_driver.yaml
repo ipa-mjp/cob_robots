@@ -23,18 +23,6 @@ defaults:
   #  switching_state: 4 # stop motor before switching state
 
 nodes:
-    - name: arm_joint_1
-      id: 50
-      #dcf_overlay:
-      #  "6098": "1"            # Homing methods (comes from Elmo)
-      #  "6099sub1": "10000.333"    # Homing speed utill reach to swtich (FLS/RLS)
-      #  "6099sub2": "10000.333"    # Homing speed from swtich (FLS/RLS) to negative direction
-      #  "609A": "10000.333"        # Homing acceleration
-
-      pos_to_device: "(pos / 0.001034507)*962.2126"
-      pos_from_device: "(obj6064 * 0.001034507)/962.2126"
-      #vel_to_device: "(vel/ 0.001034507)*962.2126"
-      #vel_from_device: "(obj606C* 0.001034507)/962.2126"
 
     - name: arm_joint_2
       id: 10
