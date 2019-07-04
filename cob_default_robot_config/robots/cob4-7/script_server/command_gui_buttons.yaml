@@ -10,38 +10,54 @@ group10:
   buttons: [[stop,stop,omni],
     [init,init],
     [recover,recover]]
-#group11:
-#  group_name: sensorring
-#  component_name: sensorring
-#  buttons: [[stop,stop],
-#    [init,init],
-#    [recover,recover],
-#    [front,move,front],
-#    [back,move,back],
-#    [left,move,left],
-#    [right,move,right]]
-#group12:
-#  group_name: arm_left
-#  component_name: arm_left
-#  buttons: [[stop,stop],
-#    [init,init],
-#    [recover,recover],
-#    [home,move,home],
-#    [folded,move,folded],
-#    [side, move, side],
-#    [wave_demo, move, wave_demo],
-#    [hello, move, hello]]
-#group13:
-#  group_name: arm_right
-#  component_name: arm_right
-#  buttons: [[stop,stop],
-#    [init,init],
-#    [recover,recover],
-#    [home,move,home],
-#    [folded,move,folded],
-#    [side, move, side],
-#    [wave_demo, move, wave_demo],
-#    [hello, move, hello]]
+group11:
+  group_name: sensorring
+  component_name: sensorring
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [front,move,front],
+    [back,move,back],
+    [left,move,left],
+    [right,move,right]]
+group12:
+  group_name: arm_left
+  component_name: arm_left
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [side, move, side],
+    [wave_demo, move, wave_demo],
+    [hello, move, hello]]
+group13:
+  group_name: arm_right
+  component_name: arm_right
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [home,move,home],
+    [folded,move,folded],
+    [side, move, side],
+    [wave_demo, move, wave_demo],
+    [hello, move, hello]]
+group15:
+  group_name: arm_right
+  component_name: arm_right
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [point0,move,point0],
+    [point1,move,point1],
+    [point2,move,point2],
+    [point3,move,point3],
+    [point4,move,point4],
+    [point5,move,point5],
+    [point_to_tab,move,point_to_tab],
+    [tab_to_point,move,tab_to_point],
+    [point_to_tab_torso15,move,point_to_tab_torso15],
+    [tab_to_point_torso15,move,tab_to_point_torso15]]
 group16:
   group_name: torso
   component_name: torso
@@ -57,7 +73,40 @@ group16:
     [left,move,left],
     [right,move,right],
     [nod,move,nod],
-    [shake,move,shake]]
+    [shake,move,shake],
+    [fd01,move,fd01],
+    [fd15,move,fd15],
+    [fr15,move,fr15],
+    [fr45,move,fr45],
+    [fd30,move,fd30]]
+group17:
+  group_name: torso
+  component_name: torso
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [front,move,front],
+    [l15,move,l15],
+    [l30,move,l30],
+    [l45,move,l45],
+    [l60,move,l60],
+    [l75,move,l75],
+    [l90,move,l90],
+    [l180,move,l180]]
+group18:
+  group_name: torso
+  component_name: torso
+  buttons: [[stop,stop],
+    [init,init],
+    [recover,recover],
+    [front,move,front],
+    [r15,move,r15],
+    [r30,move,r30],
+    [r45,move,r45],
+    [r60,move,r60],
+    [r75,move,r75],
+    [r90,move,r90],
+    [r180,move,r180]]
 #group18:
 #  group_name: head
 #  component_name: head
@@ -76,12 +125,26 @@ group21:
   group_name: mimic
   component_name: behavior
   buttons: [[laughing,trigger,setMimicLaughing],
+    [happy,trigger,setMimicHappy],
     [asking,trigger,setMimicAsking],
-    [SayYes,trigger,setMimicYes],
-    [blinkingRight,trigger,setMimicBlinkingRight],
+    [sayYes,trigger,setMimicYes],
+    [sayNo,trigger,setMimicNo],
+    #[blinkingRight,trigger,setMimicBlinkingRight],
+    [blinkingLeft,trigger,setMimicBlinkingLeft],
+    [blinking,trigger,setMimicBlinking],
+    #[angry,trigger,setMimicAngry],
+    [tired,trigger,setMimicTired],
+    [fallAsleep,trigger,setMimicFallingAsleep],
+    [sleeping,trigger,setMimicSleeping],
+    [wakingUp,trigger,setMimicWakingUp],
+    #[afraid,trigger,setMimicAfraid],
+    [sad,trigger,setMimicSad],
+    [bored,trigger,setMimicBored],
+    [busy,trigger,setMimicBusy],
     [confused,trigger,setMimicConfused],
-    [angry,trigger,setMimicAngry],
-    [sleep,trigger,setMimicFallingAsleep]]
+    #[default,trigger,setMimicDefault],
+    [searching,trigger,setMimicSearching],
+    [surprised,trigger,setMimicSurprised]]
 group22:
   group_name: light
   component_name: behavior
