@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
-       name="pbrt" >
+       name="p_rob" >
 
   <!-- common stuff -->
   <xacro:include filename="$(find pd_benchmarking)/urdf/common.xacro" />
@@ -12,7 +12,7 @@
 
 
   <!-- instantiate the robot -->
-  <xacro:p_rob_arm prefix="$(arg robot_prefix)" joint_limited="false"/>
+  <xacro:p_rob_arm prefix="$(arg robot_prefix)" joint_limited="true"/>
 
   <link name="world" />
 
@@ -22,4 +22,11 @@
     <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
   </joint>
 
+ <!-- ros_control plugin -->
+    <gazebo>
+      <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
+        <robotNamespace>"p_rob"</robotNamespace>
+        <filterJointsParam>joint_names</filterJointsParam>
+      </plugin>
+    </gazebo>
 </robot>

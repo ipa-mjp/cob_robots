@@ -1,2 +1,2 @@
-rate: 50 #Hz
-source_list: [/joint_states, /prbt/joint_states]
+rate: 100 #Hz
+source_list: [/base/joint_states, /arm/joint_states, /torso/joint_states]
