@@ -1,0 +1,2 @@
+rate: 50 #Hz
+source_list: [/joint_states, /prbt/joint_states]
