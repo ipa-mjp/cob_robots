@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!-- args -->
+    <arg name="robot" value="lwa4p_extended"/>
+    <arg name="component_name" value="arm"/>
+    <arg name="sim" default="true"/>
+    
+    <!-- upload robot description -->
+    <include file="$(find cob_hardware_config)/upload_robot.launch">
+        <arg name="robot" value="$(arg robot)"/>
+    </include>
+    
+  	<!-- robot state publisher -->
+    <include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="joint_state_gui" value="true"/>
+    </include>
+    
+
+    <include file="$(find cob_bringup)/components/canopen_generic.launch">
+        <arg name="robot" value="$(arg robot)"/>
+        <arg name="component_name" value="$(arg component_name)"/>
+        <arg name="can_device" value="can0"/>
+        <arg name="sim" value="$(arg sim)"/>
+        <arg if="$(arg sim)" name="cartesian_control" value="true"/>
+    </include>
+  
+    <!--<node name="visualization" pkg="rviz" type="rviz" output="screen" />  -->
+  
+</launch>
+

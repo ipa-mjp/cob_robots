@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+       name="ur5" >
+
+  <!-- common stuff -->
+  <xacro:include filename="$(find pd_benchmarking)/urdf/ur5/common.gazebo.xacro" />
+  <xacro:include filename="$(find pd_benchmarking)/urdf/materials.urdf.xacro" />
+
+  <!--  ur5 -->
+  <xacro:include filename="$(find pd_benchmarking)/urdf/ur5/ur5.urdf.xacro" />
+
+  <!-- include universal_robot arm -->
+  <xacro:ur5_robot prefix="arm_" joint_limited="true"/>
+
+
+  <!-- Used for fixing robot to Gazebo -->
+  <link name="world"/>
+
+  <!-- mount the arm to the robot -->
+  <joint name="arm_base_joint" type="fixed" >
+    <parent link="world" />
+    <child link="arm_base_link" />
+   </joint>
+
+    <!-- ros_control plugin -->
+    <gazebo>
+      <plugin name="ros_control" filename="libhwi_switch_gazebo_ros_control.so">
+        <robotNamespace>arm</robotNamespace>
+        <filterJointsParam>joint_names</filterJointsParam>
+      </plugin>
+    </gazebo>
+
+</robot>
