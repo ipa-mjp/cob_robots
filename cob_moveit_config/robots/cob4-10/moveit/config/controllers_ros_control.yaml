@@ -1,0 +1,12 @@
+controller_list:
+  - name: arm/effort_joint_trajectory_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - arm_left_joint1
+      - arm_left_joint2
+      - arm_left_joint3
+      - arm_left_joint4
+      - arm_left_joint5
+      - arm_left_joint6
