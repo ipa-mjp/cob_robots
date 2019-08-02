@@ -1,0 +1,4 @@
+diagnostics_name: cam3d_left
+topics: [/cam3d_left/rgb/camera_info, /cam3d_left/depth/camera_info]
+hz: 15
+hzerror: 5
