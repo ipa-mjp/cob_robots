@@ -38,24 +38,24 @@ nodes:
 
     - name: arm_joint_2
       id: 10
-      pos_to_device: "(-1.0)*(pos * 4000)"
-      pos_from_device: "(-1.0)*(obj6064 / 4000 )"
-      vel_to_device: "(-1.0)*(vel * 4000)"
-      vel_from_device: "(-1.0)*(obj606C / 4000 )"
+      pos_to_device: "(-1.0)*(pos * 4480.89)"
+      pos_from_device: "(-1.0)*(obj6064 / 4480.89 )"
+      vel_to_device: "(-1.0)*(vel * 4480.89)"
+      vel_from_device: "(-1.0)*(obj606C / 4480.89 )"
 
     - name: arm_joint_3
       id: 20
-      pos_to_device: "(pos * 5096)"
-      pos_from_device: "(obj6064 / 5096 )"
-      vel_to_device: "(vel * 5096)"
-      vel_from_device: "(obj606C / 5096 )"
+      pos_to_device: "(-1.0)*(pos * 4480.87)"
+      pos_from_device: "(-1.0)*(obj6064 / 4480.87 )"
+      vel_to_device: "(-1.0)*(vel * 4480.87)"
+      vel_from_device: "(-1.0)*(obj606C / 4480.87 )"
 
     - name: arm_joint_4
       id: 30
-      pos_to_device: "(-1.0)*(pos * 4500)"
-      pos_from_device: "(-1.0)*(obj6064 / 4500 )"
-      vel_to_device: "(-1.0)*(vel * 4500)"
-      vel_from_device: "(-1.0)*(obj606C / 4500 )"
+      pos_to_device: "(1.0)*(pos * 4644.58)"
+      pos_from_device: "(1.0)*(obj6064 / 4644.58 )"
+      vel_to_device: "(1.0)*(vel * 4644.58)"
+      vel_from_device: "(1.0)*(obj606C / 4644.58 )"
 
     - name: arm_joint_5
       id: 40
