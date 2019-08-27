@@ -41,6 +41,9 @@
         <arg name="sim" value="$(arg sim)"/>
     </include>
 
+    <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_gripper_base_link_gripper_camera_frame" output="screen" args="0.0 0.05 0.095 -1.57 -1.57 0  gripper_base_link gripper_camera_frame 100"/>
+
+
     <!-- start common nodes used in hardware and simulation -->
     <include file="$(find cob_script_server)/launch/script_server.launch"/>
     <include file="$(find cob_bringup)/tools/behavior.launch"/>
