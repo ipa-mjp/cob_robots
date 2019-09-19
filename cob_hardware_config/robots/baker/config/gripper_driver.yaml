@@ -32,11 +32,11 @@ nodes:
     pos_from_device: "(obj6064/12000)*1.44"
     vel_to_device: "vel*12000"
     vel_from_device: "obj606C/12000"
-    dcf_overlay:
-        "6098": "18"            # Homing methods (comes from Elmo)
-        "6099sub1": "50.333"    # Homing speed utill reach to swtich (FLS/RLS)
-        "6099sub2": "50.333"    # Homing speed from swtich (FLS/RLS) to negative direction
-        "609A": "50.333"        # Homing acceleration
+    #dcf_overlay:
+    #    "6098": "18"            # Homing methods (comes from Elmo)
+    #    "6099sub1": "50.333"    # Homing speed utill reach to swtich (FLS/RLS)
+    #    "6099sub2": "50.333"    # Homing speed from swtich (FLS/RLS) to negative direction
+    #    "609A": "50.333"        # Homing acceleration
   #- name: gripper_small_finger_left_join
     #id: 60
     #eds_file: "robots/common/Elmo.dcf"
