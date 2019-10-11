@@ -12,7 +12,7 @@
 
   <!-- baker_gripper -->
    <!--xacro:include filename="$(find cob_description)/urdf/baker_gripper/baker_gripper.urdf.xacro" /-->
-  <xacro:include filename="$(find cob_description)/urdf/baker_gripper/baker_two_fingure_gripper.urdf.xacro" />
+  <!--xacro:include filename="$(find cob_description)/urdf/baker_gripper/baker_two_fingure_gripper.urdf.xacro" /-->
 
 
   <!-- Used for fixing robot to Gazebo -->
@@ -24,5 +24,9 @@
   <!-- joint 3, 4, 5 are in the second CAN bus-->
   <xacro:baker_arm_can1 name="arm_can1" parent="arm_can0_link1"/>
 
+  <!--xacro:baker_arm_gripper name="gripper" parent="world"/-->
+  <!--xacro:baker_gripper prefix="" parent="arm_gripper">
+    <origin xyz="0.0 0 0.0" rpy="0 0 -1.57"/>
+  </xacro:baker_gripper-->
 
 </robot>
