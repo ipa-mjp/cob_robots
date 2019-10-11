@@ -16,10 +16,10 @@
   <!-- Used for fixing robot to Gazebo -->
   <link name="world"/>
 
-  <xacro:baker name="arm" parent="world"/>
+  <xacro:baker name="arm_can0" parent="world"/>
 
   <!--xacro:baker_arm_gripper name="gripper" parent="world"/-->
-  <xacro:baker_gripper prefix="" parent="arm_gripper">
+  <xacro:baker_gripper prefix="" parent="arm_can0_gripper">
     <origin xyz="0.0 0 0.0" rpy="0 0 -1.57"/>
   </xacro:baker_gripper>
 
