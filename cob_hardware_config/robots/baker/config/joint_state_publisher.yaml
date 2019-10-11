@@ -1,2 +1,2 @@
 rate: 100 #Hz
-source_list: [/joint_states,/arm/joint_states, /gripper/joint_states] #,/gripper/joint_states
+source_list: [/joint_states,/arm_can0/joint_states, /gripper/joint_states] #,/gripper/joint_states
