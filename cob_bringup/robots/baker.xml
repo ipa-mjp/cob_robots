@@ -43,12 +43,13 @@
         <arg name="sim" value="$(arg sim)"/>
     </include-->
 
-    <include file="$(find cob_bringup)/components/canopen_generic.launch">
+    <!-- BakeR arm gripper -->
+    <!--include file="$(find cob_bringup)/components/canopen_generic.launch">
         <arg name="robot" value="$(arg robot)"/>
         <arg name="component_name" value="gripper"/>
         <arg name="can_device" value="can1"/>
         <arg name="sim" value="$(arg sim)"/>
-    </include>
+    </include-->
 
     <node pkg="tf" type="static_transform_publisher" name="static_transform_publisher_gripper_base_link_gripper_camera_frame" output="screen" args="0.0 0.05 0.095 -1.57 -1.57 0  gripper_base_link gripper_camera_frame 100"/>
 
