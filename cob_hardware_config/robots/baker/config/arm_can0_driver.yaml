@@ -23,7 +23,7 @@ defaults:
   #  switching_state: 4 # stop motor before switching state
 
 nodes:
-    - name: arm_joint_1
+    - name: arm_can0_joint_1
       id: 50
       #dcf_overlay:
       #  "6098": "1"            # Homing methods (comes from Elmo)
@@ -36,7 +36,7 @@ nodes:
       #vel_to_device: "(vel/ 0.001034507)*962.2126"
       #vel_from_device: "(obj606C* 0.001034507)/962.2126"
 
-    - name: arm_joint_2
+    - name: arm_can0_joint_2
       id: 10
       pos_to_device: "(-1.0)*(pos * 4480.89)"
       pos_from_device: "(-1.0)*(obj6064 / 4480.89 )"

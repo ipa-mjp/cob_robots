@@ -6,7 +6,9 @@
   <xacro:include filename="$(find cob_description)/urdf/materials.urdf.xacro" />
 
   <!-- baker_arm -->
-  <xacro:include filename="$(find cob_description)/urdf/baker_arm/baker_arm.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/baker_arm_can0/baker_arm.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/baker_arm_can1/baker_arm_can1.urdf.xacro" />
+
 
   <!-- baker_gripper -->
    <!--xacro:include filename="$(find cob_description)/urdf/baker_gripper/baker_gripper.urdf.xacro" /-->
@@ -16,11 +18,11 @@
   <!-- Used for fixing robot to Gazebo -->
   <link name="world"/>
 
-  <xacro:baker name="arm_can0" parent="world"/>
+  <!-- joint 1 and 2 are in the first CAN bus -->
+  <xacro:baker_arm_can0 name="arm_can0" parent="world"/>
 
-  <!--xacro:baker_arm_gripper name="gripper" parent="world"/-->
-  <xacro:baker_gripper prefix="" parent="arm_can0_gripper">
-    <origin xyz="0.0 0 0.0" rpy="0 0 -1.57"/>
-  </xacro:baker_gripper>
+  <!-- joint 3, 4, 5 are in the second CAN bus-->
+  <xacro:baker_arm_can1 name="arm_can1" parent="arm_can0_link1"/>
+
 
 </robot>

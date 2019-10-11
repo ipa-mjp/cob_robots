@@ -24,21 +24,21 @@ defaults:
 
 nodes:
 
-    - name: arm_joint_3
+    - name: arm_can1_joint_3
       id: 20
       pos_to_device: "(1.0)*(pos * 4480.87)"
       pos_from_device: "(1.0)*(obj6064 / 4480.87 )"
       vel_to_device: "(1.0)*(vel * 4480.87)"
       vel_from_device: "(1.0)*(obj606C / 4480.87 )"
 
-    - name: arm_joint_4
+    - name: arm_can1_joint_4
       id: 30
       pos_to_device: "(-1.0)*(pos * 4644.58)"
       pos_from_device: "(-1.0)*(obj6064 / 4644.58 )"
       vel_to_device: "(-1.0)*(vel * 4644.58)"
       vel_from_device: "(-1.0)*(obj606C / 4644.58 )"
 
-    - name: arm_joint_5
+    - name: arm_can1_joint_5
       id: 40
       pos_to_device: "(-1.0)*(pos * 4621.02)"
       pos_from_device: "(-1.0)*(obj6064 / 4621.02 )"
