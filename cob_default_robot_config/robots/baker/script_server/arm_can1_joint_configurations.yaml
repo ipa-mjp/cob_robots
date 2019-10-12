@@ -1,0 +1,14 @@
+joint_names: ['arm_can1_joint_3','arm_can1_joint_4'] #arm_can1_joint_5 
+
+
+action_name: /arm_can1/joint_trajectory_controller/follow_joint_trajectory
+#service_ns: /arm_controller
+service_ns: /arm_can1/driver
+default_vel: 0.50
+default_acc: 0.10
+
+# back side positions
+home: [[0.0, 0.0]]
+grasp: [[-1.5998822605965464, -1.3597777777777778]]
+#upright: [[0.0, -1.5707, 0.0, -1.5707, 0.00, 0.0]]
+

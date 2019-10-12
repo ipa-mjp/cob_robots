@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ipa_hardware_config
+    relative_path: robots/baker/urdf/baker.urdf.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/baker.srdf
+  CONFIG:
+    author_name: mjp
+    author_email: mjp@ipa.fhg.de
+    generated_timestamp: 1557227666
