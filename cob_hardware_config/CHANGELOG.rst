@@ -2,6 +2,90 @@
 Changelog for package cob_hardware_config
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.4 (2020-03-18)
+------------------
+
+0.7.3 (2020-03-18)
+------------------
+* Merge pull request `#806 <https://github.com/ipa320/cob_robots/issues/806>`_ from fmessmer/remove_cob4-22
+  remove cob4-22
+* remove cob4-22
+* Merge pull request `#805 <https://github.com/ipa320/cob_robots/issues/805>`_ from fmessmer/fix/joint_state_publisher_gui
+  fix joint_state_publisher_gui repo split
+* fix joint_state_publisher_gui repo split
+* Backup kevins (`#804 <https://github.com/ipa320/cob_robots/issues/804>`_)
+  add auto init and auto recover for cob4-20 and cob4-23
+* Merge pull request `#799 <https://github.com/ipa320/cob_robots/issues/799>`_ from HannesBachter/add_cob4-23
+  Add cob4 23
+* calibrate base by BUB
+* add cob4-23
+* Merge pull request `#798 <https://github.com/ipa320/cob_robots/issues/798>`_ from ipa-jba/feature/raw-mini
+  Feature/raw mini
+* remove unneeded files
+* use raw_mini_base
+* fixed laser height
+* make rplidar launchfile use a config file
+* cleanup for now
+* Deleted raw_mini_base_controller.yaml
+* Clean-up
+* modified launch file
+* Added raw_mini_base_controller.yaml
+* Fixed bugs
+* Modified files for raw-mini
+* Removed unused files
+* Modified launch files
+* Added bringup files for raw-mini
+* Merge pull request `#794 <https://github.com/ipa320/cob_robots/issues/794>`_ from fmessmer/fix_deprecation_warning
+  remove pre-hydro parameter static_map
+* remove pre-hydro parameter static_map
+* Merge pull request `#792 <https://github.com/ipa320/cob_robots/issues/792>`_ from fmessmer/ci_updates
+  [travis] ci updates
+* fix test dependendies
+* catkin_lint fixes
+* Merge pull request `#791 <https://github.com/ipa320/cob_robots/issues/791>`_ from HannesBachter/update_cob4-16
+  update cob4-16
+* update cob4-16 (is now running kinetic with d435 cams)
+* Contributors: Felix Messmer, Florian Weisshardt, HannesBachter, Jannik Abbenseth, flg-vs, fmessmer, hyb
+
+0.7.2 (2019-11-07)
+------------------
+* Merge pull request `#786 <https://github.com/ipa320/cob_robots/issues/786>`_ from fmessmer/add_cob4-24
+  [WIP] add cob4 24
+* Merge pull request `#24 <https://github.com/ipa320/cob_robots/issues/24>`_ from HannesBachter/add_cob4-24
+  fix gripper
+* fix gripper can, driver, ...
+* fix velocity filter and costmap config
+* add cob4-24
+* Merge pull request `#785 <https://github.com/ipa320/cob_robots/issues/785>`_ from HannesBachter/calibrate_cob4-3
+  correct typo for fl FDM
+* correct typo for fl FDM
+* Merge pull request `#784 <https://github.com/ipa320/cob_robots/issues/784>`_ from HannesBachter/calibrate_cob4-3
+  Calibrate cob4 3
+* harmonize config appearance
+* calibrate cob4-3 base
+* Merge pull request `#783 <https://github.com/ipa320/cob_robots/issues/783>`_ from HannesBachter/update_cob4-3
+  update cob4-3 to regular cob base
+* update cob4-3 to regular cob base
+* Contributors: Benjamin Maidel, Felix Messmer, fmessmer, hyb
+
+0.7.1 (2019-08-10)
+------------------
+* Merge pull request `#782 <https://github.com/ipa320/cob_robots/issues/782>`_ from fmessmer/comment_ur_dependencies
+  [Melodic] workaround missing dependencies
+* comment ur dependencies
+* Contributors: Felix Messmer, fmessmer
+
+0.7.0 (2019-08-07)
+------------------
+* Merge pull request `#780 <https://github.com/ipa320/cob_robots/issues/780>`_ from fmessmer/melodic_checks
+  [Melodic] add melodic checks
+* added laser_filters prefix for melodic
+* fixed xacro:if condition for melodic
+* Merge pull request `#779 <https://github.com/ipa320/cob_robots/issues/779>`_ from HannesBachter/add_cob4-22
+  add cob4-22
+* add cob4-22
+* Contributors: Felix Messmer, Florian Weisshardt, fmessmer, hyb
+
 0.6.11 (2019-04-05)
 -------------------
 * Merge pull request `#775 <https://github.com/ipa320/cob_robots/issues/775>`_ from fmessmer/add_cob4-25
