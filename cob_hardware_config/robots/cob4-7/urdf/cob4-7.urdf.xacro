@@ -20,7 +20,8 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_prob_arm/cob4_prob_arm.urdf.xacro" />
 
   <!-- hand -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_gripper/gripper.urdf.xacro" />
+  <!--xacro:include filename="$(find cob_description)/urdf/cob4_gripper/gripper.urdf.xacro" /-->
+  <xacro:include filename="$(find cob_description)/urdf/cob4_prob_gripper/prob_gripper.urdf.xacro" />
 
   <!-- head -->
   <xacro:include filename="$(find cob_description)/urdf/cob4_head/head.urdf.xacro" />
@@ -100,6 +101,14 @@
   <xacro:gripper name="gripper_left" parent="arm_left_7_link">
     <origin xyz="${gripper_left_x} ${gripper_left_y} ${gripper_left_z}" rpy="${gripper_left_roll} ${gripper_left_pitch} ${gripper_left_yaw}" />
   </xacro:gripper-->
+
+  <xacro:prob_gripper name="gripper_right" parent="arm_right_gripper_interface_link" orientation="up" simulation="false">
+    <origin xyz="${gripper_right_x} ${gripper_right_y} ${gripper_right_z}" rpy="${gripper_right_roll} ${gripper_right_pitch} ${gripper_right_yaw}" />
+  </xacro:prob_gripper>
+
+  <xacro:prob_gripper name="gripper_left" parent="arm_left_gripper_interface_link" orientation="up" simulation="false">
+    <origin xyz="${gripper_left_x} ${gripper_left_y} ${gripper_left_z}" rpy="${gripper_left_roll} ${gripper_left_pitch} ${gripper_left_yaw}" />
+  </xacro:prob_gripper>
 
   <xacro:sensorring name="sensorring" parent="head_3_link" active="${True}">
     <origin xyz="${sensorring_x} ${sensorring_y} ${sensorring_z}" rpy="${sensorring_roll} ${sensorring_pitch} ${sensorring_yaw}" />
