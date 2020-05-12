@@ -2,6 +2,10 @@ moveit_setup_assistant_config:
   URDF:
     package: cob_hardware_config
     relative_path: robots/cob4-7/urdf/cob4-7.urdf.xacro
-    use_jade_xacro: true
+    xacro_args: ""
   SRDF:
     relative_path: config/cob4-7.srdf
+  CONFIG:
+    author_name: myp
+    author_email: myp@ipa.fhg.de
+    generated_timestamp: 1589275838

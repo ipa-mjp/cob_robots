@@ -1,0 +1,21 @@
+controller_list:
+  - name: fake_arm_left_controller
+    joints:
+      - torso_2_joint
+      - torso_3_joint
+      - arm_left_joint1
+      - arm_left_joint2
+      - arm_left_joint3
+      - arm_left_joint4
+      - arm_left_joint5
+      - arm_left_joint6
+  - name: fake_arm_right_controller
+    joints:
+      - torso_2_joint
+      - torso_3_joint
+      - arm_right_joint1
+      - arm_right_joint2
+      - arm_right_joint3
+      - arm_right_joint4
+      - arm_right_joint5
+      - arm_right_joint6
