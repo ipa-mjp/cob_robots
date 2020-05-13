@@ -8,4 +8,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: myp
     author_email: myp@ipa.fhg.de
-    generated_timestamp: 1589275838
+    generated_timestamp: 1589365055
