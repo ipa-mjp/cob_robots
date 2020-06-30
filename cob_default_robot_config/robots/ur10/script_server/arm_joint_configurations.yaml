@@ -1,0 +1,12 @@
+joint_names: [shoulder_1_joint, shoulder_2_joint, shoulder_3_joint, wrist_1_joint, wrist_2_joint, wrist_3_joint]
+#action_name: /arm_controller/follow_joint_trajectory
+action_name: /joint_trajectory_controller/follow_joint_trajectory
+#service_ns: /arm_controller
+service_ns: /arm
+default_vel: 0.3
+
+# back side positions
+home: [[-0.7854, -1.5707, 1.5707, 0.0, 1.5707, 1.5707]]
+upright: [[0.0, -1.5707, 0.0, -1.5707, 0.00, 0.0]]
+peegrasp: [[-0.018763001057311435, -2.7047382355228766, 2.3260352071105617, -2.7481429857090585, -1.7051499574026225, -3.072346469440694]]
+
