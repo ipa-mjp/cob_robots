@@ -1,0 +1,4 @@
+diagnostics_name: camera1
+topics: [/camera1/rgb/camera_info, /camera1/depth/camera_info]
+hz: 15
+hzerror: 5
